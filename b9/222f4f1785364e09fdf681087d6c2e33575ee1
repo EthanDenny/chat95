@@ -1,0 +1,149 @@
+.gitignore
+  s_0416b3259c65b9::t_8dea563c184e68 1-24
+.oxlintrc.json
+  s_0416b3259c65b9::t_f7b55ed2f5ed7b 1-8
+README.md
+  s_0416b3259c65b9::t_5c2411a18935f8 1-35
+index.html
+  s_7596126cb50275::t_1b3c21e8d9e95c 1-14
+package-lock.json
+  s_0416b3259c65b9::t_bffb14cdf3c6a9 1-2061
+package.json
+  s_0416b3259c65b9::t_4ce23e44c7d18c 1-30
+public/cursors/README.md
+  s_0416b3259c65b9::t_c4251d37ce0349 1-14
+public/fonts/README.md
+  s_0416b3259c65b9::t_351d79aec3910f 1-83
+public/fonts/sources.json
+  s_0416b3259c65b9::t_bf0e1813a256c4 1-26
+public/icons/sources.json
+  s_0416b3259c65b9::t_dfdaa808b0c58c 1-137
+public/reference/98-css-LICENSE.txt
+  s_0416b3259c65b9::t_96f9088f64b268 1-7
+public/reference/apps/README.md
+  s_0416b3259c65b9::t_c49d8605907708 1-50
+public/reference/comparisons/index.html
+  s_0416b3259c65b9::t_0fc076c10308b0 1
+public/reference/comparisons/results.json
+  s_0416b3259c65b9::t_4e88549f6702cf 1-56
+public/reference/fonts/index.html
+  s_0416b3259c65b9::t_8dcae78a86f39e 1
+public/reference/fonts/results.json
+  s_0416b3259c65b9::t_cff8aa6ff24954 1-278
+scripts/extract-app-sprites.py
+  s_0416b3259c65b9::t_8505a32b8b4167 1-39
+scripts/extract-font.py
+  s_0416b3259c65b9::t_d6336aeaefa494 1-46
+scripts/recover-fonts.py
+  s_0416b3259c65b9::t_bb6d083173f44d 1-42
+scripts/requirements-fonts.txt
+  s_0416b3259c65b9::t_a1737ed2f2ed53 1
+scripts/test-apps.ts
+  s_0416b3259c65b9::t_06f270ed06f01e 1-33
+scripts/test-fonts.ts
+  s_0416b3259c65b9::t_c309995942d9c2 1-38
+scripts/test-window-sizing.ts
+  s_0416b3259c65b9::t_ec5904fe629096 1-38
+scripts/verify-apps.ts
+  s_0416b3259c65b9::t_cd188258c46565 1-47
+scripts/verify-fonts.ts
+  s_0416b3259c65b9::t_2700c4d3c48861 1-49
+src/App.css
+  s_0416b3259c65b9::t_2a6cfadbd1ffd2 1-32
+src/App.tsx
+  s_0416b3259c65b9::t_0970485717914a 1-152
+src/DesignPage.tsx
+  s_7596126cb50275::t_1d42cc4a410852 1-137
+src/InteractiveVisuals.tsx
+  s_0416b3259c65b9::t_1a5f87c5a310e0 1-48
+src/LiveScrollPane.tsx
+  s_0416b3259c65b9::t_c0d05b86d20a94 1-59
+src/apps/WindowResizeHandles.tsx
+  s_0416b3259c65b9::t_ba5797615218ba 1-56
+src/apps/assets.ts
+  s_0416b3259c65b9::t_74f44ef5713ea1 1-14
+src/apps/calculator.ts
+  s_0416b3259c65b9::t_9223589407163a 1-39
+src/apps/chrome.ts
+  s_0416b3259c65b9::t_f5243b28ebe492 1-46
+src/apps/desktop.ts
+  s_0416b3259c65b9::t_65aa863ca11a06 1-61
+src/apps/edges.ts
+  s_0416b3259c65b9::t_1e7b6cd41c349a 1-26
+src/apps/model.ts
+  s_0416b3259c65b9::t_022b29190da33c 1-28
+src/apps/paintBrowser.ts
+  s_0416b3259c65b9::t_64d0cefc950d76 1-116
+src/apps/paintCalculator.ts
+  s_0416b3259c65b9::t_ed84e0040a05d6 1-25
+src/apps/paintPanel.ts
+  s_0416b3259c65b9::t_ef229cd1faf171 1-50
+src/apps/panelLayout.ts
+  s_0416b3259c65b9::t_8695afd2624ff0 1-14
+src/apps/render.ts
+  s_0416b3259c65b9::t_50bd52b34ea0ac 1-72
+src/apps/useDesktop.ts
+  s_0416b3259c65b9::t_5cfa71cb3c0e04 1-103
+src/apps/windowSizing.ts
+  s_0416b3259c65b9::t_2f3859dd11325d 1-18
+src/bitmapFont.ts
+  s_0416b3259c65b9::t_6857ed39f3b596 1-82
+src/collectionSamples.ts
+  s_0416b3259c65b9::t_a654e5730f6dcd 1-120
+src/cursorHotspots.json
+  s_0416b3259c65b9::t_196f8b8f7d4b97 1-44
+src/cursors.css
+  s_0416b3259c65b9::t_14fb3c545a1751 1-22
+src/designSamples.ts
+  s_0416b3259c65b9::t_4104e27db6aa59 1-81
+src/fileListSamples.ts
+  s_0416b3259c65b9::t_3e44e58076ec76 1-39
+src/fonts/bitmap-fonts.json
+  s_0416b3259c65b9::t_793e0eaca4b0db 1
+src/formControls.ts
+  s_0416b3259c65b9::t_f206ea85bf4348 1-53
+src/hitStyle.ts
+  s_0416b3259c65b9::t_c32ced25238a33 1
+src/index.css
+  s_7596126cb50275::t_b07b880c65b030 1-4
+src/kitIcons.ts
+  s_0416b3259c65b9::t_7397aa7f8a3186 1-27
+src/main.tsx
+  s_7596126cb50275::t_492a1c44309d65 1-16
+src/useWin95Cursors.ts
+  s_0416b3259c65b9::t_5fef8c7366aa98 1-38
+src/win95.ts
+  s_0416b3259c65b9::t_cc4b6dac2f5b1c 1-112
+tsconfig.app.json
+  s_0416b3259c65b9::t_5bd05749b75138 1-26
+tsconfig.json
+  s_0416b3259c65b9::t_ad60a200c04672 1-7
+tsconfig.node.json
+  s_0416b3259c65b9::t_a1f8ca431635dc 1-23
+vite.config.ts
+  s_0416b3259c65b9::t_1e6150137dec5c 1-7
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "b9222f4f1785364e09fdf681087d6c2e33575ee1",
+  "prompts": {},
+  "sessions": {
+    "s_0416b3259c65b9": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0aa71-00d3-78d1-863a-34f254ad9e1b",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "Ethan Denny <ethandenny@protonmail.com>"
+    },
+    "s_7596126cb50275": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "b45a78dc-a88e-4740-a39f-20a502914166",
+        "model": "grok-4.6"
+      },
+      "human_author": "Ethan Denny <ethandenny@protonmail.com>"
+    }
+  }
+}
