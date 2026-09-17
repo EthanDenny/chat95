@@ -137,7 +137,10 @@ test('client retries continuation without replaying a completed mutation', async
   const run = freshRun(), ctx = context()
   let requests = 0
   const options = { signal: ctx.signal, execute: (tool: ToolCall) => executeLocalTool(tool, ctx), onActivity: () => {},
-    fetch: (async () => {
+    fetch: (async (_url, init) => {
+      const localDate = JSON.parse(String(init?.body)).localDate
+      assert(Number.isInteger(localDate.month) && localDate.month >= 1 && localDate.month <= 12)
+      assert(Number.isInteger(localDate.day) && localDate.day >= 1 && localDate.day <= 31)
       requests++
       if (requests === 1) return Response.json({ text: null, toolCalls: [createCall] })
       if (requests === 2) return Response.json({ error: 'Busy' }, { status: 429 })

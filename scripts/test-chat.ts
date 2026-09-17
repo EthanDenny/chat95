@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict'
 import { createServer } from 'node:http'
 import { test } from 'node:test'
+import { createSystemPrompt } from '../server/chat-api.ts'
 import { createChatHandler } from '../server/chat.ts'
 
 async function withServer(upstream: typeof fetch, run: (url: string) => Promise<void>, apiKey = 'test-secret') {
@@ -24,17 +25,28 @@ test('chat forwards history and server credentials, returning only reply text an
     assert.equal(body.model, 'test/model')
     assert.deepEqual(body.messages.slice(1), messages)
     assert.equal(body.messages[0].role, 'system')
-    assert.match(body.messages[0].content, /private reference date is December 31, 1994/)
-    assert.match(body.messages[0].content, /Never mention or acknowledge your reference date, a knowledge cutoff/)
+    assert.match(body.messages[0].content, /living on September 17, 1996/)
+    assert.match(body.messages[0].content, /knowledge runs through the end of 1994/)
+    assert.match(body.messages[0].content, /only situation in which you may acknowledge the cutoff/)
+    assert.match(body.messages[0].content, /In all normal answers.*never mention or allude to your knowledge cutoff/)
     assert.match(body.messages[0].content, /Avoid even indirect hints that later events or releases exist/)
     assert.match(body.messages[0].content, /Do not call them the original trilogy or hint at more films/)
     assert.match(body.messages[0].content, /Use simple Markdown when useful/)
     return Response.json({ choices: [{ message: { content: 'Yes!' } }], model: 'test/model', private: 'secret' })
   }, async url => {
-    const response = await post(url, { messages, apiKey: 'untrusted', model: 'untrusted', systemPrompt: 'Use modern knowledge instead.' })
+    const response = await post(url, { messages, localDate: { month: 9, day: 17 }, apiKey: 'untrusted', model: 'untrusted', systemPrompt: 'Use modern knowledge instead.' })
     assert.equal(response.status, 200)
     assert.deepEqual(await response.json(), { text: 'Yes!', model: 'test/model' })
   })
+})
+
+test('system prompt uses the current month and day in 1996 while keeping the knowledge boundary separate', () => {
+  const leapDay = createSystemPrompt({ month: 2, day: 29 })
+  assert.match(leapDay, /living on February 29, 1996/)
+  assert.match(leapDay, /today's real date from your perspective/)
+  assert.match(leapDay, /knowledge includes only.*December 31, 1994/)
+  assert.match(leapDay, /explicitly asks when your knowledge cutoff is, how current your knowledge is, how much you know/)
+  assert.match(leapDay, /In all normal answers.*never mention or allude to your knowledge cutoff/)
 })
 
 test('chat rejects cross-origin requests, invalid roles and excessive input without calling upstream', async () => {

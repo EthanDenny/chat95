@@ -30,9 +30,11 @@ export async function runChatTurn(run: ToolRun, options: {
       }
     }
     signal.throwIfAborted()
+    const localNow = new Date()
     const response = await (options.fetch ?? fetch)('/api/chat', {
       method: 'POST', signal, headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ messages: run.messages, toolsEnabled: true }),
+      body: JSON.stringify({ messages: run.messages, toolsEnabled: true,
+        localDate: { month: localNow.getMonth() + 1, day: localNow.getDate() } }),
     })
     const result = await response.json()
     signal.throwIfAborted()

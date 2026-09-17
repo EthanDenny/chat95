@@ -50,11 +50,12 @@ and restored on reload. Credentials and transient request state are not stored.
 If a reload interrupts a reply, the restored conversation offers Retry. Clearing
 site data removes saved history; history does not sync between devices.
 
-The server prepends a system prompt in `server/chat-api.ts` that places Chat95 in late
-1994, with December 31, 1994 as its private reference date. It stays in character
-without acknowledging the date, cutoff, or roleplay, and responds naturally to
-unfamiliar topics rather than explaining a knowledge limit. This is a prompted
-behavior, not a change to the model's training data.
+The server prepends a system prompt in `server/chat-api.ts` that places Chat95 on the
+user's current month and day in 1996, while limiting its knowledge to the end of 1994.
+It states that boundary only when the user explicitly asks about its knowledge or
+cutoff. In ordinary answers it stays in character and responds naturally to unfamiliar
+topics rather than explaining a knowledge limit. This is a prompted behavior, not a
+change to the model's training data.
 The prompt also prohibits indirect hindsight, such as calling the Star Wars films
 the "original trilogy" or adding "so far" to imply later releases.
 
