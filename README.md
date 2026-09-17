@@ -1,96 +1,122 @@
 # Chat95
 
-A Windows 95-inspired chat application built with React, TypeScript, Vite, and a
-Cloudflare Worker. The browser UI uses the separately maintained
-[`@ethandenny/win95-ui`](https://github.com/EthanDenny/win95-ui) component package.
+Chat95 is a Windows 95-inspired chat app powered by OpenRouter and deployed with Cloudflare Workers and Static Assets.
 
-## Run locally
+[Open Chat95](https://chat95.ethandenny.dev) · [Win95 UI component library](https://github.com/EthanDenny/win95-ui)
 
-```sh
-npm install
-cp .env.example .env.local
-# Set OPENROUTER_API_KEY in .env.local, then:
-npm run dev
+## Prerequisites
+
+- Node.js 22 or newer
+- npm
+- An [OpenRouter](https://openrouter.ai/) API key
+- A Cloudflare account only if you plan to deploy
+
+## Local setup
+
+1. Clone the repository and install dependencies:
+
+   ```sh
+   git clone https://github.com/EthanDenny/chat95.git
+   cd chat95
+   npm ci
+   ```
+
+2. Create your local environment file:
+
+   ```sh
+   cp .env.example .env.local
+   ```
+
+3. Add your OpenRouter credentials to `.env.local`:
+
+   ```dotenv
+   OPENROUTER_API_KEY=<your-openrouter-key>
+   OPENROUTER_MODEL=stealth/union-alpha
+   ```
+
+   The API key is read only by the local server and must not use a `VITE_` prefix. Never commit `.env.local`.
+
+4. Start the development server:
+
+   ```sh
+   npm run dev
+   ```
+
+5. Open [http://localhost:5173](http://localhost:5173).
+
+Restart the development server after changing environment variables. The private Win95 UI dependency is included as a vendored package, so a fresh install does not require GitHub or npm registry credentials.
+
+## Commands
+
+| Command | Purpose |
+| --- | --- |
+| `npm run dev` | Start Vite with the local chat API proxy |
+| `npm run build` | Type-check and create a production build |
+| `npm run preview` | Preview an existing production build locally |
+| `npm test` | Run the automated tests |
+| `npm run lint` | Run Oxlint |
+| `npm run cf:types` | Regenerate Cloudflare binding types |
+| `npm run cf:dev` | Build and run the app with Wrangler locally |
+| `npm run deploy` | Build and deploy to Cloudflare |
+
+## Cloudflare development
+
+To test the Worker runtime locally, create an ignored `.dev.vars` file:
+
+```dotenv
+OPENROUTER_API_KEY=<your-openrouter-key>
 ```
 
-The browser calls the same-origin `/api/chat` endpoint. The Vite development
-plugin and production Cloudflare Worker proxy requests to OpenRouter, so the API
-key remains server-side. Never prefix credentials with `VITE_`.
+Then run:
 
-Conversations, drafts, folders, tool receipts, and the selected conversation are
-stored in localStorage. Clearing site data removes them; they do not sync between
-browsers or domains. Interrupted and provider-error replies remain visible and
-offer Retry.
+```sh
+npm run cf:dev
+```
 
-## Model behavior
+The model used by the Worker is configured through `OPENROUTER_MODEL` in `wrangler.jsonc`.
 
-The server-owned prompt in `server/chat-api.ts` places Chat95 on the user's
-current month and day in 1996 while limiting its knowledge to the end of 1994.
-It discloses that boundary only when directly asked about its knowledge or
-cutoff, and avoids wording that implies later events exist.
+## Deploying
 
-Assistant replies support basic Markdown: paragraphs, lists, bold, italics, and
-code. Emoji are removed before display. User messages, status text, and tool
-receipts remain plain text; raw HTML, remote images, and active links are not
-rendered.
+The checked-in `wrangler.jsonc` is configured for `chat95.ethandenny.dev`. If you are deploying a fork, first update its Worker name, account ID, and custom-domain route.
 
-## Conversations and tools
-
-The conversation browser uses top-level folders. The assistant can call
-`search_conversations` to search saved titles and messages, and
-`manage_folders` to list, create, rename, or delete folders and move
-conversations. Mutating folder actions require confirmation. Tool definitions,
-validation, and round limits are owned by the proxy; client-supplied system
-prompts and tool definitions are ignored.
-
-## Win95 UI dependency
-
-Chat95 pins `@ethandenny/win95-ui@0.1.0` as the checked-in package archive
-`vendor/ethandenny-win95-ui-0.1.0.tgz`. This keeps clean installs and Cloudflare
-deployments reproducible without a GitHub token even though both repositories are
-private. Components, fonts, icon sprites, choice glyphs, and cursors live in the
-Win95 UI repository rather than this project.
-
-To update it, release a new package version in a sibling `win95-ui` checkout,
-run `npm pack` there, copy the resulting archive into `vendor/`, update the
-dependency path in `package.json`, and run `npm install`.
-
-## Cloudflare deployment
-
-Production uses one Cloudflare Worker with Static Assets at
-[chat95.ethandenny.dev](https://chat95.ethandenny.dev). Only `/api/*` invokes the
-Worker.
+Authenticate with Cloudflare and store the OpenRouter key as a Worker secret:
 
 ```sh
 npx wrangler login
-npm run cf:types
 npx wrangler secret put OPENROUTER_API_KEY
+```
+
+Deploy the Worker and frontend assets:
+
+```sh
 npm run deploy
 ```
 
-For the first deployment, provide an ignored secrets file to Wrangler. Do not
-commit credentials or put them in `wrangler.jsonc`. The API applies same-origin,
-request-size, timeout, output-token, and approximate per-IP/per-location rate
-limits. OpenRouter usage may incur charges independently of Cloudflare's free
-tier.
+Keep credentials out of `wrangler.jsonc` and other tracked files. To change the production model, update `vars.OPENROUTER_MODEL` in `wrangler.jsonc` and deploy again.
 
-## Structure
+## Updating the Win95 UI package
 
-- `src/chat/` contains the chat UI, local history, folders, Markdown rendering,
-  and browser-executed tools.
-- `server/` contains the shared prompt, OpenRouter proxy, and validation.
-- `worker/` adapts the proxy to Cloudflare Workers and Static Assets.
-- `vendor/` contains the exact Win95 UI package used by the app.
-- `scripts/test-*.ts` cover chat behavior, storage, tools, Markdown, and the
-  Worker boundary.
+Chat95 installs `@ethandenny/win95-ui` from the archive in `vendor/`. To update it:
 
-## Validation
+1. Build and test the desired version in a checkout of [EthanDenny/win95-ui](https://github.com/EthanDenny/win95-ui).
+2. Run `npm pack` in that repository.
+3. Copy the generated archive into this repository's `vendor/` directory.
+4. Update the archive path in `package.json`.
+5. Run `npm install`, then validate with `npm test`, `npm run lint`, and `npm run build`.
 
-```sh
-npm test
-npm run lint
-npm run build
-```
+Commit the new archive together with `package.json` and `package-lock.json` so clean installs remain reproducible.
 
-The component library has its own test, lint, build, specimen, and visual
-verification workflows in the Win95 UI repository.
+## Project map
+
+- `src/` — React application and chat interface
+- `server/` — shared server-side chat handling
+- `worker/` — Cloudflare Worker entry point
+- `vendor/` — packaged Win95 UI dependency
+- `scripts/` — automated tests and repository utilities
+
+## Troubleshooting
+
+- **The chat API is unavailable locally:** confirm `OPENROUTER_API_KEY` is set in `.env.local`, then restart `npm run dev`.
+- **The deployed Worker cannot reach OpenRouter:** set the secret again with `npx wrangler secret put OPENROUTER_API_KEY` and redeploy.
+- **Local conversations are missing in production:** chat history is stored in browser local storage and is separate for each origin.
+- **The UI package fails to install:** verify that the archive named in `package.json` exists in `vendor/` and is committed.
