@@ -17,10 +17,15 @@ for filename, source in sources.items():
     assert hashlib.sha256(path.read_bytes()).hexdigest() == source['sha256'], filename
     for font in monobit.load(path):
         glyphs = {}
+        missing = font.get_default_glyph()
         for char in font.get_chars():
             if not char.value or ord(char.value) < 32 or ord(char.value) == 127:
                 continue
             glyph = font.get_glyph(char)
+            # These FONs map unsupported Windows-1252 characters to the default
+            # solid bar. Advertising them in WOFF prevents browser fallback.
+            if glyph.pixels == missing.pixels:
+                continue
             rows = [''.join(str(bit) for bit in row) for row in glyph.pixels.as_matrix()]
             glyphs[char.value] = {'advance': int(glyph.advance_width), 'rows': rows}
             assert glyph.left_bearing == 0

@@ -5,7 +5,7 @@ import { TypographyDemo, LabelDemo, IconDemo, SurfaceDemo } from '../Interactive
 import { CollectionDemo } from '../InteractiveCollections'
 import { WindowDemo } from '../InteractiveWindow'
 import { LiveScrollPane } from '../LiveScrollPane'
-import { ButtonSpecimenStory, ColorSwatchStory, ColumnHeaderStory, ListViewStory, SplitPaneStory, PaneStory, ScrollbarStory } from './ControlStories'
+import { TextAreaStory, ButtonSpecimenStory, ColorSwatchStory, ColumnHeaderStory, ListViewStory, SplitPaneStory, PaneStory, ScrollbarStory } from './ControlStories'
 import { MenuStory, MenuItemStory, MenuSeparatorStory, MenuBarStory, ToolbarStory } from './MenuStories'
 import { TitleBarStory, WindowFrameStory, WindowChromeStory, CaptionButtonStory, DialogStory, StatusBarStory, StatusFieldStory, SizeGripStory, WindowTrackingStory } from './WindowStories'
 import { TaskbarStory, TaskbarButtonStory, StartMenuStory, IconButtonStory, PixelScaleStory } from './DesktopStories'
@@ -16,6 +16,7 @@ export const stories = {
   Checkbox: ChoiceDemo,
   Radio: props => <ChoiceDemo {...props} radio />,
   TextInput: TextDemo,
+  TextArea: TextAreaStory,
   NumberInput: props => <TextDemo {...props} numeric />,
   Spinner: SpinnerDemo,
   Dropdown: DropdownDemo,

@@ -4,6 +4,7 @@ export const entries = [
   { name: 'ButtonSpecimen', file: 'Button.tsx', group: 'Inputs' },
   { name: 'Checkbox', file: 'Choice.tsx', group: 'Inputs' },
   { name: 'Radio', file: 'Choice.tsx', group: 'Inputs' },
+  { name: 'TextArea', file: 'TextArea.tsx', group: 'Inputs' },
   { name: 'TextInput', file: 'TextInput.tsx', group: 'Inputs' },
   { name: 'NumberInput', file: 'NumberInput.tsx', group: 'Inputs' },
   { name: 'Spinner', file: 'Spinner.tsx', group: 'Inputs' },

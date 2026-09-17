@@ -1,3 +1,4 @@
+import { TextArea } from '../components/TextArea'
 import { useState } from 'react'
 import { Demo, Toggle } from '../InteractiveDemo'
 import { ButtonSpecimen } from '../components/Button'
@@ -52,4 +53,11 @@ export function PaneStory({ scale }: StoryProps) {
 export function ScrollbarStory({ scale }: StoryProps) {
   const [vertical, setVertical] = useState(false)
   return <><label className="catalog-variant"><input type="checkbox" checked={vertical} onChange={event => setVertical(event.target.checked)} /> Vertical</label><ScrollbarDemo scale={scale} vertical={vertical} /></>
+}
+
+export function TextAreaStory({ scale }: StoryProps) {
+  const [value, setValue] = useState('A message with\nmore than one line.'), [disabled, setDisabled] = useState(false)
+  return <Demo title="Multiline text" controls={<Toggle title="Text area" label="Disabled" value={disabled} onChange={setDisabled} />}>
+    <PixelScale scale={scale} width={280} height={70}><TextArea aria-label="Multiline text" width={280} height={70} value={value} disabled={disabled} onChange={event => setValue(event.target.value)} /></PixelScale>
+  </Demo>
 }

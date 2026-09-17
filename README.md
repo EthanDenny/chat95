@@ -8,10 +8,12 @@ no live canvases or transparent controls layered over painted interfaces.
 
 ```sh
 npm install
+cp .env.example .env.local
+# Set OPENROUTER_API_KEY in .env.local, then:
 npm run dev
 ```
 
-- `/` — blank white index.
+- `/` — Chat95, an OpenRouter-powered chat with conversation history, Stop, and Retry.
 - `/test/desktop` — Calculator, Control Panel, and Internet Explorer recreation.
 - `/test/design` — component workbench, with static specimens and an Interactive toggle.
 - `/test/components` — searchable catalog of every reusable component, with filenames,
@@ -32,6 +34,24 @@ previews and working desktop color settings. The browser supports address
 editing, local informational pages, history, favorites, and scrolling; external
 addresses offer a link to open the website in the host browser.
 
+## Chat setup
+
+Set `OPENROUTER_API_KEY` in `.env.local` (ignored by Git). The default model is
+`stealth/union-alpha`; change `OPENROUTER_MODEL` to another OpenRouter model ID.
+Restart Vite after changing these settings. Never prefix credentials with `VITE_`.
+
+The browser calls the same-origin `/api/chat` endpoint. A server-only Vite plugin
+forwards conversation history to [OpenRouter](https://openrouter.ai/docs/api/api-reference/chat/create-a-chat-completion).
+The key stays on the local server and is never included in the client bundle.
+This endpoint runs under `npm run dev` and `npm run preview`; serving `dist/`
+by itself will not provide the API. Responses are currently non-streaming.
+Conversations live in memory and reset when the page reloads.
+
+The chat title bar controls the browser where web APIs permit it: Maximize enters
+fullscreen, Restore exits fullscreen, and Close requests that the tab close.
+Minimize is disabled because webpages cannot minimize the browser window.
+If the browser refuses fullscreen or closing, Chat95 explains the limitation.
+
 ## Structure
 
 - `src/components/` — shared buttons, visible text inputs, checkbox/radio inputs,
@@ -43,7 +63,7 @@ addresses offer a link to open the website in the host browser.
   Calculator/Control Panel/browser views, and thin adapters connecting shared
   menus, dialogs, window chrome, and taskbars to desktop state.
 - `src/ComponentsPage.tsx`, `src/catalog/` — catalog UI, inventory, and live stories.
-- `src/TestPages.tsx` — lazy-loaded local test routes; the index stays blank.
+- `src/TestPages.tsx` — lazy-loaded local test routes; the index opens Chat95.
 - `src/DesignPage.tsx`, `*Specimens.tsx`, `Interactive*.tsx` — gallery compositions
   using the same browser components as the desktop.
 - `src/theme.ts`, `captionGlyphs.ts`, `collectionModel.ts`, `icons.ts` — shared

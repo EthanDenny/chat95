@@ -1,9 +1,11 @@
 import { lazy, Suspense } from 'react'
 
+const Chat = lazy(() => import('./chat/ChatPage'))
 const Desktop = lazy(() => import('./App'))
 const Design = lazy(() => import('./DesignPage'))
 const Components = lazy(() => import('./ComponentsPage'))
 const routes = {
+  '': { page: Chat, title: 'Chat95' },
   '/test/desktop': { page: Desktop, title: 'Windows 95 Desktop' },
   '/test/design': { page: Design, title: 'Windows 95 · Design' },
   '/test/components': { page: Components, title: 'Windows 95 · Components' },

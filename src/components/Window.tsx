@@ -15,8 +15,9 @@ export function WindowChrome({ title, label = title, icon, width, active = true,
     <TitleBar {...titleProps} title={title} icon={icon} active={active} inert={disabled} tabIndex={disabled ? -1 : 0} role="group" aria-label={`Move ${label}`}
       style={{ position: 'absolute', left: inset, top: inset, width: width - inset - 59, zIndex: 2, ...titleProps?.style }} />
     {(['minimize', 'maximize', 'close'] as const).map((kind, index) => <CaptionButton key={kind} kind={kind === 'maximize' && maximized ? 'restore' : kind} className={captionClassName}
+      data-window-control={kind}
       aria-label={`${kind === 'maximize' && maximized ? 'Restore' : kind[0].toUpperCase() + kind.slice(1)} ${label}`}
-      disabled={disabled || captionDisabled || kind === 'maximize' && maximizeDisabled} style={{ position: 'absolute', left: width - [55, 39, 21][index] - (inset - 3), top: inset + 2, zIndex: 2 }} onClick={() => onCaption(kind === 'maximize' && maximized ? 'restore' : kind)} />)}
+      disabled={disabled || captionDisabled || kind === 'maximize' && maximizeDisabled} style={{ position: 'absolute', left: width - [55, 39, 21][index] - (inset - 3), top: inset + 2, zIndex: 4 }} onClick={() => onCaption(kind === 'maximize' && maximized ? 'restore' : kind)} />)}
   </>
 }
 export function Window({ height, children, style, className = '', ...chrome }: WindowChromeProps & { height: number; children?: ReactNode; style?: CSSProperties; className?: string }) {

@@ -2,7 +2,7 @@
 
 Open `/test/components` for every exported component, its filename, a live example,
 state controls, and its source. `/test/design` retains the visual specimen sheet;
-`/test/desktop` exercises the same components in applications. `/` stays blank.
+`/test/desktop` exercises the same components in applications. `/` uses the components in a chat mockup.
 
 Import components directly from their source files. Each component owns its shared
 styles; no desktop application imports are needed. Geometry is specified in original
@@ -10,7 +10,7 @@ Windows pixels. Wrap a composition in `PixelScale`; don't scale individual child
 inside an already scaled window. The test pages use two physical pixels per original
 pixel, including on Retina screens.
 
-- **Inputs:** Button, Checkbox, Radio, TextInput, NumberInput, Spinner, Dropdown,
+- **Inputs:** Button, Checkbox, Radio, TextInput, TextArea, NumberInput, Spinner, Dropdown,
   ColorSwatch. NumberInput is controlled with a string so partially typed numbers can
   be edited. Its steppers support min/max/step; read-only disables stepping.
 - **Collections:** ListView (list, small-icons, details, columns), TreeView, Pane,

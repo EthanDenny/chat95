@@ -2,7 +2,18 @@ import { drawBitmapText } from './reference/referenceText.ts'
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
 import { createCanvas } from '@napi-rs/canvas'
-import { fontRoles, getBitmapFont, measureBitmapText } from '../src/bitmapFont.ts'
+import { fontChoices, fontRoles, getBitmapFont, measureBitmapText } from '../src/bitmapFont.ts'
+
+test('native faces do not advertise missing-character bars as punctuation', () => {
+  for (const { font } of fontChoices) {
+    const { glyphs } = getBitmapFont(font)
+    for (const char of '€‚ƒ„…†‡ˆ‰Š‹ŒŽ“”•–—˜™š›œžŸ') {
+      assert.equal(glyphs[char], undefined, `${JSON.stringify(font)}: ${char}`)
+    }
+    for (const char of '‘’"\'-|?é') assert.ok(glyphs[char], char)
+    assert.equal(measureBitmapText('—', font), measureBitmapText('?', font))
+  }
+})
 
 test('font roles select native families, sizes, and intrinsic weights', () => {
   assert.equal(getBitmapFont(fontRoles.ui).source, 'SSERIFE.FON')
