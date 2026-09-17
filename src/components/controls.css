@@ -306,7 +306,9 @@ button.w95-browser-links { padding: 4px 6px; margin: 0; border: 0; border-radius
 .w95-taskbar-button:disabled:active { --frame-top: #fff; --frame-bottom: #000; --frame-inner-top: #dfdfdf; --frame-inner-bottom: #808080; }
 .w95-taskbar-button:disabled:active img, .w95-taskbar-button:disabled:active .w95-taskbar-label { translate: none; }
 
-textarea.w95-textarea { display: block; resize: none; border: 0; border-radius: 0; padding: 5px 6px; color: #000; line-height: 17px; outline: none; }
-textarea.w95-textarea:disabled { --inset-face: #c0c0c0; color: #808080; }
+.w95-textarea-frame { position: relative; display: block; flex: none; overflow: hidden; }
+.w95-textarea-frame[data-disabled=true] { --inset-face: #c0c0c0; }
+textarea.w95-textarea { position: absolute; inset: 4px; width: calc(100% - 8px); height: calc(100% - 8px); display: block; resize: none; border: 0; border-radius: 0; padding: 1px 2px; background: #fff; color: #000; line-height: 17px; outline: none; }
+textarea.w95-textarea:disabled { background: #c0c0c0; color: #808080; }
 textarea.w95-textarea::selection { background: #000080; color: #fff; }
 textarea.w95-textarea::placeholder { color: #808080; opacity: 1; }
