@@ -38,7 +38,14 @@
 .chat-folder-form .chat-folder-subject { margin: 0 0 8px; }
 .chat-no-results { position: absolute; left: 8px; right: 20px; top: 8px; pointer-events: none; color: #808080; }
 .chat-main { position: relative; }
-.chat-message-frame { padding: 2px; }
+.chat-message-frame { position: relative; padding: 2px; overflow: hidden; }
+/* Keep partially scrolled bitmap glyphs visibly separate from the inset frame. */
+.chat-message-frame::before, .chat-message-frame::after {
+  content: ''; position: absolute; z-index: 1; left: 2px; right: 18px; height: 2px;
+  background: #fff; pointer-events: none;
+}
+.chat-message-frame::before { top: 2px; }
+.chat-message-frame::after { bottom: 2px; }
 .chat-messages { padding: 8px; background: #fff; box-sizing: border-box; }
 .chat-message { margin-bottom: 12px; }
 .chat-message:last-child { margin-bottom: 0; }
