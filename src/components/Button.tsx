@@ -13,9 +13,8 @@ function ButtonFace({ children, width = 75, height = 23, font = fontRoles.ui, co
   const offset = Number(state === 'pressed')
   return <>
     <span className="w95-button-frame" aria-hidden="true" />
-    {children && <span className="w95-button-label" style={{ left: Math.floor((width - measureBitmapText(children, font)) / 2) + offset, top: Math.floor((height - getBitmapFont(font).height) / 2) + offset }}>
-      <NativeText font={font} color={color} disabled={state === 'disabled'}>{children}</NativeText>
-    </span>}
+    {children && <NativeText className="w95-button-label" font={font} color={color} disabled={state === 'disabled'}
+      style={{ left: Math.floor((width - measureBitmapText(children, font)) / 2) + offset, top: Math.floor((height - getBitmapFont(font).height) / 2) + offset }}>{children}</NativeText>}
     {state === 'focused' && <span className="w95-button-focus" aria-hidden="true" />}
   </>
 }
@@ -44,4 +43,3 @@ export function ButtonSpecimen({ state, width = 75, height = 23, ...props }: Fac
     <ButtonFace {...props} width={width} height={height} state={state} />
   </span>
 }
-
