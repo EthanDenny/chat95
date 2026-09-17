@@ -1,0 +1,19 @@
+src/components/Button.tsx
+  s_0416b3259c65b9::t_f16a04265607ce 16-17
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "8ae88cab0e179b813c08a33b06d5f4b6b35053e3",
+  "prompts": {},
+  "sessions": {
+    "s_0416b3259c65b9": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0aa71-00d3-78d1-863a-34f254ad9e1b",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "Ethan Denny <ethandenny@protonmail.com>"
+    }
+  }
+}
