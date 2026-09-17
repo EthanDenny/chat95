@@ -1,0 +1,37 @@
+src/chat/ChatPage.tsx
+  s_f6d442c1a95ae0::t_6a998cc5eb628e 10,12,18-23,30-44,101,105,313-332,451-453
+  s_f6d442c1a95ae0::t_399add6b2d18d5 177-222,251-312,333,335-345
+  s_f6d442c1a95ae0::t_0ad3d1b928b28f 424,459-463,465
+  s_f6d442c1a95ae0::t_f06ddd8f29b9f5 456
+  s_f6d442c1a95ae0::t_e825a9acb83ef3 102-104
+  s_f6d442c1a95ae0::t_f5b86972aa69ae 2
+  s_f6d442c1a95ae0::t_a4fb19f3cf74a7 359,361-364,366
+  s_f6d442c1a95ae0::t_d330c541ed6f5d 3-9,56-74,77-80,82-85,94-100,107-109,114-117,122-124,130-133,137-138,141-144,152-165,167-169,172-174,227-238,240-245,334,346-358,360,365,367-423,425-432,435-450,454-455,457-458,464,466-468
+  s_f6d442c1a95ae0::t_2b2ed8aa13ecd4 17,24,54
+  s_f6d442c1a95ae0::t_af935c5242a5eb 433
+biome.json
+  s_f6d442c1a95ae0::t_56d256b08354fb 8-20
+src/chat/ChatConversation.tsx
+  s_f6d442c1a95ae0::t_db7cbed97c415f 1-41,43-58,60-75
+  s_f6d442c1a95ae0::t_6a998cc5eb628e 42,59
+src/chat/ChatTitleBar.tsx
+  s_f6d442c1a95ae0::t_db7cbed97c415f 1-53
+src/chat/ChatDialogs.tsx
+  s_f6d442c1a95ae0::t_db7cbed97c415f 1-90
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "f3525a1af6da7870bf6c66694db5c31ee58ac4b0",
+  "prompts": {},
+  "sessions": {
+    "s_f6d442c1a95ae0": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0af51-07d4-7173-a75a-eb3161a50456",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Ethan Denny <ethandenny@protonmail.com>"
+    }
+  }
+}
