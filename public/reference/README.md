@@ -76,7 +76,7 @@ lines, square expanders, checkerboard scroll tracks, and scrollbar junction
 follow the user's original Explorer screenshot (September 16, 2026,
 `Screenshot 2026-09-16 at 12.50.27.png`). The gallery also includes list-box,
 small-icon and details views, inactive selection, pressed headers, and disabled
-scrollbars. These are native-size canvas drawings using the existing font and
+scrollbars. These were originally native-size canvas drawings using the existing font and
 original icon assets, displayed at the gallery's fixed 2 physical pixels per
 source pixel. The interactive pane supports arrows, paging, thumb dragging,
 wheel scrolling and keyboard navigation. Content and pane sizes are examples;

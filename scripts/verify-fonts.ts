@@ -1,6 +1,7 @@
+import { drawBitmapText } from './reference/referenceText.ts'
 import { createCanvas, loadImage } from '@napi-rs/canvas'
 import { mkdirSync, writeFileSync } from 'node:fs'
-import { drawBitmapText, fontChoices, fontRoles, getBitmapFont, measureBitmapText } from '../src/bitmapFont.ts'
+import { fontChoices, fontRoles, getBitmapFont, measureBitmapText } from '../src/bitmapFont.ts'
 import type { FontSpec } from '../src/bitmapFont.ts'
 const output = 'public/reference/fonts'
 mkdirSync(output, { recursive: true })

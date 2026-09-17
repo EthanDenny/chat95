@@ -12,3 +12,5 @@ integer physical-pixel scale, then supplies them as resolution-aware CSS cursor
 images. The original CUR files remain a fallback. The design page uses 2×;
 the desktop follows its display scale. Title-bar dragging retains the classic
 arrow instead of the host operating system's grab/grabbing hands.
+
+Scaled PNG variants in `scaled/` are generated ahead of time with `npx tsx scripts/build-cursors.ts`. The browser selects an integer physical-pixel size using CSS image-set; no runtime canvas is required.

@@ -1,5 +1,5 @@
 import type { AppWindow } from './model'
-import type { Rect } from '../win95'
+import type { Rect } from '../theme'
 
 export type ResizeEdge = 'n' | 's' | 'e' | 'w' | 'nw' | 'ne' | 'sw' | 'se'
 export const resizeEdges: ResizeEdge[] = ['n', 's', 'e', 'w', 'nw', 'ne', 'sw', 'se']

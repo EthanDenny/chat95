@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 import type { PointerEvent } from 'react'
 import type { AppWindow } from './model'
-import type { Rect } from '../win95'
+import type { Rect } from '../theme'
 import { canResize, resizeEdges, resizeLabels, resizeWindow } from './windowSizing'
 import type { ResizeEdge } from './windowSizing'
 
@@ -25,7 +25,7 @@ export function WindowResizeHandles({ window: w, point, onResize, onPreview }: P
     if (drag.current) onResize(drag.current.bounds)
     cancel()
   }
-  return resizeEdges.map(edge => <div key={edge} className={`hit-target resize-hit-target resize-${edge}`} role="group" tabIndex={0} aria-label={`Resize ${resizeLabels[edge]} edge`} onPointerDown={event => {
+  return resizeEdges.map(edge => <div key={edge} className={`resize-hit-target resize-${edge}`} role="group" tabIndex={0} aria-label={`Resize ${resizeLabels[edge]} edge`} onPointerDown={event => {
     if (event.button !== 0) return
     event.preventDefault()
     event.currentTarget.focus()

@@ -36,4 +36,4 @@ export function calculate(state: CalculatorState, key: string): CalculatorState 
   }
   return next
 }
-export const calculatorKey = (key: string) => ({ Enter: '=', Escape: 'C', Backspace: 'Back', Delete: 'CE' })[key] ?? (/^[\d.+\-*/%=]$/.test(key) ? key : null)
+export const calculatorKey = (key: string) => ({ Enter: '=', Escape: 'C', Backspace: 'Back', Delete: 'CE', F9: '+/-', ',': '.', '@': 'sqrt', r: '1/x', R: '1/x' })[key] ?? (/^[\d.+\-*/%=]$/.test(key) ? key : null)

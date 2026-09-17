@@ -1,7 +1,8 @@
+import { drawBitmapText } from './reference/referenceText.ts'
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
 import { createCanvas } from '@napi-rs/canvas'
-import { drawBitmapText, fontRoles, getBitmapFont, measureBitmapText } from '../src/bitmapFont.ts'
+import { fontRoles, getBitmapFont, measureBitmapText } from '../src/bitmapFont.ts'
 
 test('font roles select native families, sizes, and intrinsic weights', () => {
   assert.equal(getBitmapFont(fontRoles.ui).source, 'SSERIFE.FON')

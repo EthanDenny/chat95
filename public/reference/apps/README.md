@@ -18,7 +18,7 @@ Gallery context: https://guidebookgallery.org/screenshots/win95/ and https://gui
 
 ## Reproduce the comparison
 
-Run `npm run verify:apps`. This executes the same app painters used by the live desktop in `@napi-rs/canvas`, with the same bitmap font data and decoded PNG assets. It writes:
+Run `npm run verify:apps`. This executes the retained offline app painters in `scripts/reference/` in `@napi-rs/canvas`, with the same bitmap font data and decoded PNG assets. It writes:
 
 - `public/reference/comparisons/index.html`: source / implementation / difference images.
 - `public/reference/comparisons/results.json`: exact counts and percentages.
@@ -48,3 +48,7 @@ These results cover only the initial active, native-size windows. Inactive capti
 - IE supports address entry, local Home/Windows/Help pages, back/forward history, favorites, and scrolling by arrows, track, thumb, wheel, and keyboard. HTTP(S) pages offer an explicit link to open in the user's modern browser. This is not an IE engine or a proxy for arbitrary websites. Printing displays a no-printer notice.
 
 Validation: `npm test`, `npm run lint`, `npm run build`, and `npm run verify:apps`. Live-browser checks include calculator arithmetic, Start launching, window drag/maximize/minimize/restore, task switching, desktop color changes, typed addresses, history, and scrollbar dragging.
+
+## DOM button migration
+
+The complete desktop now uses DOM/CSS components and generated original-font WOFF faces. The retained painters live in `scripts/reference/` and are not imported by the app. `verify:apps` measures only those offline reference painters. Its exact-match percentages must not be presented as verification of the migrated browser interface.

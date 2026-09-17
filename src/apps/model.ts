@@ -1,6 +1,6 @@
 import { initialCalculator } from './calculator'
 import type { CalculatorState } from './calculator'
-import type { Rect } from '../win95'
+import type { Rect } from '../theme'
 export type AppId = 'calculator' | 'control-panel' | 'browser'
 export type AppWindow = Rect & { id: AppId; minimized: boolean; maximized: boolean; restore?: Rect }
 export type AppControl = Rect & { id: string; label: string; disabled?: boolean; kind?: 'address' | 'title' | 'scroll-thumb'; value?: string }

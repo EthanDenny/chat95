@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { applications, initialApps, navigateBrowser, travelBrowser, panelNames } from './model'
 import type { AppId, AppWindow } from './model'
-import type { DesktopState } from './desktop'
+import type { DesktopState } from './desktopState'
 import { panelLayout } from './panelLayout'
 import { calculate } from './calculator'
 const clock = () => new Date().toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' })
