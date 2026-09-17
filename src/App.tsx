@@ -1,3 +1,4 @@
+import { IconButton } from './components/IconButton'
 import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import type { PointerEvent } from 'react'
 import { DISPLAY_HEIGHT, DISPLAY_WIDTH, fitDisplay, toDesktopPoint } from './display'
@@ -7,7 +8,7 @@ import { appShortcut } from './apps/keyboard'
 import { applications, appIds } from './apps/model'
 import type { AppId, AppWindow } from './apps/model'
 import { WindowResizeHandles } from './apps/WindowResizeHandles'
-import { WindowTracking } from './apps/WindowTracking'
+import { WindowTracking } from './components/WindowTracking'
 import { DesktopTaskbar } from './apps/DesktopTaskbar'
 import { DesktopWindowChrome } from './apps/DesktopWindowChrome'
 import { CalculatorView } from './apps/CalculatorView'
@@ -70,10 +71,9 @@ function App() {
       if (!(event.target as Element).closest('[data-start-control]')) setState(s => s.startOpen ? { ...s, startOpen: false } : s)
     }} onKeyDown={event => { if (event.key === 'Escape') { cancelDrag(); setState(s => ({ ...s, startOpen: false, apps: { ...s.apps, menu: null, notice: null, applet: null } })) } }}>
       <p className="sr-only">Double-click a desktop icon to open an app. Drag window title bars to move; drag window borders to resize. Release to apply or press Escape to cancel. Calculator is fixed-size.</p>
-      {appIds.map((id, i) => <button key={id} type="button" className="w95-desktop-icon w95-native-text" aria-label={`Open ${applications[id].title}`} style={{ left: 8, top: 16 + i * 78 }} onDoubleClick={() => open(id)} onKeyDown={event => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); open(id) } }}>
-        <img src={id === 'calculator' ? '/apps/calculator-small.png' : `/icons/${kitIconNames.indexOf(applications[id].icon as typeof kitIconNames[number])}-32.png`} alt="" width={32} height={32} draggable={false} />
-        <span>{id === 'browser' ? <>Internet<br />Explorer</> : applications[id].title}</span>
-      </button>)}
+      {appIds.map((id, i) => <IconButton key={id} variant="desktop" icon={id === 'calculator' ? '/apps/calculator-small.png' : `/icons/${kitIconNames.indexOf(applications[id].icon as typeof kitIconNames[number])}-32.png`} aria-label={`Open ${applications[id].title}`} style={{ position: 'absolute', left: 8, top: 16 + i * 78 }} onDoubleClick={() => open(id)} onKeyDown={event => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); open(id) } }}>
+        {id === 'browser' ? <>Internet<br />Explorer</> : applications[id].title}
+      </IconButton>)}
       {state.windows.filter(w => !w.minimized).map((w, index) => {
         const blocked = state.apps.notice?.app === w.id || w.id === 'control-panel' && state.apps.applet !== null
         const action = (id: string) => { if (!blocked && document.activeElement instanceof HTMLElement) dialogTriggers.current[w.id] = document.activeElement; if (id === 'command:Open address') { addressInput.current?.focus(); addressInput.current?.select() } void activate(w.id, id) }

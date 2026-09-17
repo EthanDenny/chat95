@@ -14,6 +14,8 @@ npm run dev
 - `/` — blank white index.
 - `/test/desktop` — Calculator, Control Panel, and Internet Explorer recreation.
 - `/test/design` — component workbench, with static specimens and an Interactive toggle.
+- `/test/components` — searchable catalog of every reusable component, with filenames,
+  live examples, state controls, resets, and expandable source code.
 
 The desktop uses a 640 × 480 logical coordinate space, scaled to whole physical
 pixels with black letterboxing. Retina density and browser zoom are included.
@@ -34,9 +36,14 @@ addresses offer a link to open the website in the host browser.
 
 - `src/components/` — shared buttons, visible text inputs, checkbox/radio inputs,
   dropdowns, list/tree views, scroll areas, window chrome, taskbar buttons,
-  surfaces, text, and physical-pixel scaling.
+  surfaces, text, and physical-pixel scaling. Also includes menus, dialogs, windows,
+  toolbars, taskbars, Start menus, icon buttons, number inputs, spinners, split panes,
+  status fields, and color swatches. See `src/components/README.md` for the APIs.
 - `src/apps/` — desktop state and window behavior, application layouts,
-  Calculator/Control Panel/browser views, menus, dialogs, and taskbar.
+  Calculator/Control Panel/browser views, and thin adapters connecting shared
+  menus, dialogs, window chrome, and taskbars to desktop state.
+- `src/ComponentsPage.tsx`, `src/catalog/` — catalog UI, inventory, and live stories.
+- `src/TestPages.tsx` — lazy-loaded local test routes; the index stays blank.
 - `src/DesignPage.tsx`, `*Specimens.tsx`, `Interactive*.tsx` — gallery compositions
   using the same browser components as the desktop.
 - `src/theme.ts`, `captionGlyphs.ts`, `collectionModel.ts`, `icons.ts` — shared
@@ -82,7 +89,8 @@ Install `scripts/requirements-fonts.txt` before running the Python commands.
 Web-font verification checks all 3,052 glyphs across 14 faces, including outlines,
 advances, bearings, and baselines. Tests cover calculator behavior, browser
 history, resizing, source font metrics, and a guard against canvas APIs or
-reference-renderer imports in browser source.
+reference-renderer imports in browser source. Catalog tests also verify every
+exported component has a story and no shared component imports app or demo code.
 
 `verify:fonts` compares the offline bitmap renderer with original screenshot
 font crops. `verify:apps` compares the retained offline app painters with source

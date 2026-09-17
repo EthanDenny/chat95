@@ -287,3 +287,21 @@ button.w95-browser-links { padding: 4px 6px; margin: 0; border: 0; border-radius
 .w95-scroll-specimen-pressed .w95-scroll-arrow:first-of-type .w95-scroll-glyph { margin: 1px 0 0 1px; }
 
 .w95-start-menu:focus, .w95-app-menu:focus { outline: none; }
+
+.window-tracking { position: absolute; z-index: 99; pointer-events: none; mix-blend-mode: difference; }
+.window-tracking > span { background: conic-gradient(#fff 25%, transparent 0 50%, #fff 0 75%, transparent 0) 0 0 / 2px 2px; }
+
+.w95-menu-shortcut { float: right; margin-left: 18px; }
+.w95-app-menu button:disabled { color: #808080; text-shadow: 1px 1px #fff; }
+.w95-app-menu button:disabled:hover { background: transparent; }
+.w95-menu-label:disabled { color: #808080; }
+.w95-menu-label:disabled:hover { background: transparent; }
+.w95-start-menu button.w95-start-item { padding: 0; }
+.w95-start-menu button.w95-show-desktop { padding-left: 13px; }
+.w95-color-swatch:focus-visible { outline: 1px dotted #000; outline-offset: -4px; }
+
+.w95-menu:focus { outline: none; }
+
+.w95-taskbar-button:disabled .w95-taskbar-label { color: #808080; text-shadow: 1px 1px #fff; }
+.w95-taskbar-button:disabled:active { --frame-top: #fff; --frame-bottom: #000; --frame-inner-top: #dfdfdf; --frame-inner-bottom: #808080; }
+.w95-taskbar-button:disabled:active img, .w95-taskbar-button:disabled:active .w95-taskbar-label { translate: none; }

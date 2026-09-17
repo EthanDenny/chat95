@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from 'react'
 import type { PointerEvent } from 'react'
-import { scrollbarGeometry } from './collectionModel'
-import type { Orientation, ScrollPart } from './collectionModel'
-import { PixelScale } from './components/PixelScale'
-import './components/controls.css'
+import { scrollbarGeometry } from '../collectionModel'
+import type { Orientation, ScrollPart } from '../collectionModel'
+import { PixelScale } from './PixelScale'
+import './controls.css'
 
 export function Scrollbar({ orientation, length, total, page, value, scale, controls, onChange, disabled = false }: {
   orientation: Orientation; length: number; total: number; page: number; value: number

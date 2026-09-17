@@ -1,3 +1,4 @@
+import './controls.css'
 import type { Rect } from '../theme'
 export function WindowTracking({ bounds }: { bounds: Rect | null }) {
   if (!bounds) return null

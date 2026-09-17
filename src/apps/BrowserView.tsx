@@ -1,9 +1,11 @@
+import { Toolbar, ToolbarButton } from '../components/Toolbar'
+import { StatusField } from '../components/StatusBar'
 import type { Ref } from 'react'
 import { ScrollArea } from '../components/ScrollArea'
 import { TextInput } from '../components/TextInput'
 import { NativeText } from '../components/NativeText'
 import { Button } from '../components/Button'
-import { SizeGrip } from './SizeGrip'
+import { SizeGrip } from '../components/SizeGrip'
 import { blankAddress } from './model'
 import type { AppWindow, BrowserState } from './model'
 import { browserTools } from './browserLayout'
@@ -19,15 +21,12 @@ export function BrowserView({ window: w, state, onAddress, onScroll, activate, a
   return <>
     <div className="w95-browser-bands" style={{ position: 'absolute', left: 4, top: 42, width: w.width - 8, height: 72 }}>
       <div className="w95-toolbar-grip" style={{ left: 4, top: 4, height: 36 }} />
-      <div role="toolbar" aria-label="Browser toolbar" style={{ position: 'absolute', left: 14, top: 3, width: w.width - 67, height: 39, overflow: 'hidden' }}>
+      <Toolbar aria-label="Browser toolbar" style={{ position: 'absolute', left: 14, top: 3, width: w.width - 67, height: 39, overflow: 'hidden' }}>
         {browserTools.map((label, i) => {
           const disabled = i === 0 ? state.index === 0 : i === 1 && state.index === state.history.length - 1
-          return <button key={label} type="button" className="w95-browser-tool w95-native-text" aria-label={label} disabled={disabled} style={{ left: i * 50 }} onClick={() => activate(`tool:${label}`)}>
-            <img src={`/apps/tool-${i}${i < 2 && !disabled ? '-enabled' : ''}.png`} alt="" draggable={false} style={{ position: 'absolute', left: i === 6 ? 10 : 15, top: 2 }} />
-            <span>{label}</span>{i === 6 && <span className="w95-down-glyph" style={{ left: 33, top: 12 }} />}
-          </button>
+          return <ToolbarButton key={label} aria-label={label} disabled={disabled} style={{ position: 'absolute', left: i * 50 }} icon={`/apps/tool-${i}${i < 2 && !disabled ? '-enabled' : ''}.png`} dropdown={i === 6} onClick={() => activate(`tool:${label}`)}>{label}</ToolbarButton>
         })}
-      </div>
+      </Toolbar>
       <img src="/apps/ie-logo.png" alt="Internet Explorer" style={{ position: 'absolute', right: 2, top: 2, imageRendering: 'pixelated' }} />
       <div className="w95-rule" style={{ position: 'absolute', left: 1, top: 42, width: w.width - 11 }} />
       <div className="w95-toolbar-grip" style={{ left: 4, top: 46, height: 22 }} />
@@ -54,9 +53,9 @@ export function BrowserView({ window: w, state, onAddress, onScroll, activate, a
         </div>
       </ScrollArea>
     </div>
-    <div className="w95-app-status w95-native-text" style={{ position: 'absolute', left: 4, bottom: 4, width: w.width - 180, height: 17 }}>{state.stopped ? 'Stopped' : 'Done'}</div>
-    <div className="w95-app-status" style={{ position: 'absolute', right: 73, bottom: 4, width: 101, height: 17 }} />
-    <div className="w95-app-status" style={{ position: 'absolute', right: 4, bottom: 4, width: 67, height: 17 }}><img src="/apps/browser-status.png" alt="" style={{ position: 'absolute', left: 1, top: 1, imageRendering: 'pixelated' }} /></div>
+    <StatusField variant="application" style={{ position: 'absolute', left: 4, bottom: 4, width: w.width - 180, height: 17 }}>{state.stopped ? 'Stopped' : 'Done'}</StatusField>
+    <StatusField variant="application" style={{ position: 'absolute', right: 73, bottom: 4, width: 101, height: 17 }} />
+    <StatusField variant="application" style={{ position: 'absolute', right: 4, bottom: 4, width: 67, height: 17 }}><img src="/apps/browser-status.png" alt="" style={{ position: 'absolute', left: 1, top: 1, imageRendering: 'pixelated' }} /></StatusField>
     <SizeGrip />
   </>
 }

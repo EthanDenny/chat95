@@ -1,4 +1,5 @@
-import { lazy, Suspense, useEffect, useState } from 'react'
+import { useFixedPixelScale } from './useFixedPixelScale'
+import { lazy, Suspense, useState } from 'react'
 import { CaptionSpecimens, TitleSpecimens } from './ChromeSpecimens'
 import { ChoiceSpecimens, TextInputSpecimens, DropdownSpecimens, NumberSpecimens, SpinnerSpecimens } from './FormSpecimens'
 import { TreeSpecimens, ListSpecimens, FileSpecimens, SectionSpecimens, ScrollbarSpecimens } from './CollectionSpecimens'
@@ -19,16 +20,7 @@ function LiveButton({ scale }: { scale: number }) {
 function DesignPage() {
   const [interactive, setInteractive] = useState(() => localStorage.getItem('design-interactive') === 'true')
   const [sampleText, setSampleText] = useState('The quick brown fox. 0123456789')
-  const [density, setDensity] = useState(window.devicePixelRatio)
-  useEffect(() => {
-    document.title = 'Windows 95 · Design'
-    const resize = () => setDensity(window.devicePixelRatio)
-    let media: MediaQueryList
-    const watch = () => { media?.removeEventListener('change', watch); resize(); media = window.matchMedia(`(resolution: ${window.devicePixelRatio}dppx)`); media.addEventListener('change', watch) }
-    watch(); window.addEventListener('resize', resize)
-    return () => { media.removeEventListener('change', watch); window.removeEventListener('resize', resize) }
-  }, [])
-  const scale = 2 / density
+  const scale = useFixedPixelScale()
   useWin95Cursors(scale)
   const groups = [
     { id: 'checkboxes', title: 'Checkboxes', content: <ChoiceSpecimens scale={scale} /> },
@@ -48,7 +40,7 @@ function DesignPage() {
     { id: 'surfaces', title: 'Surfaces', content: <SurfaceSpecimens scale={scale} /> },
     { id: 'icons', title: 'Icons', content: <IconSpecimens scale={scale} /> },
   ]
-  return <main className="design-page"><header className="design-header"><h1>Components</h1><a href="/test/desktop">Desktop</a><label className="interactive-mode"><input type="checkbox" checked={interactive} onChange={event => { setInteractive(event.target.checked); localStorage.setItem('design-interactive', String(event.target.checked)) }} /> Interactive</label></header>
+  return <main className="design-page"><header className="design-header"><h1>Components</h1><a href="/test/desktop">Desktop</a><a href="/test/components">Component catalog</a><label className="interactive-mode"><input type="checkbox" checked={interactive} onChange={event => { setInteractive(event.target.checked); localStorage.setItem('design-interactive', String(event.target.checked)) }} /> Interactive</label></header>
     {interactive ? <Suspense fallback={<p>Loading components…</p>}><InteractiveGallery scale={scale} /></Suspense> : <>
       <section id="typography" className="design-section"><h2>Typography</h2><label className="sample-text-label">Sample text<input value={sampleText} maxLength={80} onChange={event => setSampleText(event.target.value)} spellCheck={false} /></label><div className="sample-grid"><TypographySpecimens scale={scale} text={sampleText} /></div></section>
       <section id="window-chrome" className="design-section"><h2>Window chrome</h2><div className="sample-grid"><TitleSpecimens scale={scale} /></div><div className="sample-grid"><CaptionSpecimens scale={scale} /></div></section>

@@ -3,8 +3,9 @@ import { ListView } from './components/ListView'
 import { TreeView } from './components/TreeView'
 import { ScrollArea } from './components/ScrollArea'
 import { ColumnHeader } from './components/SurfaceBox'
-import { Scrollbar } from './Scrollbar'
-import { SplitPanes } from './InteractiveVisuals'
+import { Scrollbar } from './components/Scrollbar'
+import { SplitPane } from './components/SplitPane'
+import { Pane } from './components/Pane'
 
 const noop = () => {}
 const folders = ['Billboards', "Bobby's Stats", 'Business Unit', 'Color Samples', 'Extra Templates', 'Financial Statistics', 'Mailing Lists', 'Old Program Files', 'Quarterly Stats', 'Reviews', 'Rolling Account', 'Smith Project']
@@ -47,7 +48,7 @@ export function SectionSpecimens({ scale }: { scale: number }) {
   return <><Specimen title="Pane heading" scale={scale} width={220} height={21}><div className="w95-list-header" style={{ height: 21 }}>All Folders</div></Specimen>
     <Specimen title="Column header · normal / pressed" scale={scale} width={200} height={20}><div style={{ display: 'flex' }}><ColumnHeader style={{ width: 100 }}>Name</ColumnHeader><ColumnHeader className="w95-header-pressed" style={{ width: 100 }}>Name</ColumnHeader></div></Specimen>
     <Specimen title="Tree expanders · collapsed / expanded" scale={scale} width={49} height={25} background="#fff">{[false, true].map(expanded => <span key={String(expanded)} className="w95-tree-expander" data-expanded={expanded} style={{ left: expanded ? 32 : 8, top: 8 }} />)}</Specimen>
-    <Specimen title="Split panes · recessed borders" scale={scale} width={220} height={80}><SplitPanes width={220} height={80} /></Specimen></>
+    <Specimen title="Split panes · recessed borders" scale={scale} width={220} height={80}><SplitPane width={220} height={80} first={<Pane title="All Folders" />} second={<Pane title="Contents" />} /></Specimen></>
 }
 export function ScrollbarSpecimens({ scale }: { scale: number }) {
   return <>{[false, true].map(vertical => <Specimen key={String(vertical)} title={`${vertical ? 'Vertical' : 'Horizontal'} · normal / pressed / unavailable`} scale={scale} width={vertical ? 64 : 200} height={vertical ? 200 : 64}>

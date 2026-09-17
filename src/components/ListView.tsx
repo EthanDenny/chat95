@@ -1,7 +1,7 @@
 import { useEffect, useId, useLayoutEffect, useRef, useState } from 'react'
 import type { ListItem } from '../collectionModel'
 import { kitIconNames } from '../icons'
-import { Scrollbar } from '../Scrollbar'
+import { Scrollbar } from './Scrollbar'
 import './controls.css'
 
 export type ListEntry = ListItem & { detail?: string }

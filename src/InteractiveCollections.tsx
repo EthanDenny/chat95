@@ -4,7 +4,7 @@ import { TreeView } from './components/TreeView'
 import { useId, useState } from 'react'
 import { Demo, Toggle } from './InteractiveDemo'
 import { FileListPreview } from './FileListPreview'
-import { Scrollbar } from './Scrollbar'
+import { Scrollbar } from './components/Scrollbar'
 
 export function CollectionDemo({ scale, kind }: { scale: number; kind: 'tree' | 'list' | 'directory' | 'details' | 'small-icons' }) {
   return kind === 'tree' ? <TreeDemo scale={scale} /> : <NativeCollectionDemo scale={scale} kind={kind} />

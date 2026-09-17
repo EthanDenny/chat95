@@ -1,5 +1,5 @@
 import { useEffect, useId, useLayoutEffect, useRef, useState } from 'react'
-import { Scrollbar } from '../Scrollbar'
+import { Scrollbar } from './Scrollbar'
 import { kitIconNames } from '../icons'
 import './controls.css'
 

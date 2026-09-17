@@ -1,6 +1,6 @@
 import { useEffect, useId, useLayoutEffect, useRef, useState } from 'react'
 import type { ReactNode } from 'react'
-import { Scrollbar } from '../Scrollbar'
+import { Scrollbar } from './Scrollbar'
 
 export function ScrollArea({ label, width, height, contentWidth, contentHeight, horizontal = false, vertical = false, disabled = false, x, y, onScroll, children }: {
   label: string; width: number; height: number; contentWidth: number; contentHeight: number; horizontal?: boolean; vertical?: boolean; disabled?: boolean

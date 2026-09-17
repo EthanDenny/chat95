@@ -1,3 +1,5 @@
+import { NumberInput } from './components/NumberInput'
+import { Spinner } from './components/Spinner'
 import { Checkbox, Radio } from './components/Choice'
 import { TextInput } from './components/TextInput'
 import { PixelScale } from './components/PixelScale'
@@ -38,15 +40,10 @@ export function TextDemo({ scale, numeric = false }: { scale: number; numeric?: 
   const [readOnly, setReadOnly] = useState(false)
   const [value, setValue] = useState(numeric ? '10' : 'Windows 95')
   const fieldWidth = numeric ? 100 : 180
-  const step = (delta: number) => setValue(String((Number(value) || 0) + delta))
   return <Demo title={title} controls={<><Toggle title={title} label="Disabled" value={disabled} onChange={setDisabled} /><Toggle title={title} label="Read only" value={readOnly} onChange={setReadOnly} /></>}>
     <PixelScale scale={scale} width={fieldWidth} height={22}>
-      <div style={{ position: 'relative', width: fieldWidth, height: 22 }}>
-        <TextInput width={fieldWidth} style={numeric ? { paddingRight: 18 } : undefined} aria-label={title} inputMode={numeric ? 'numeric' : 'text'} disabled={disabled} readOnly={readOnly} value={value}
-          onChange={event => { if (!numeric || /^-?\d*$/.test(event.target.value)) setValue(event.target.value) }}
-          onKeyDown={event => { if (numeric && !readOnly && (event.key === 'ArrowUp' || event.key === 'ArrowDown')) { event.preventDefault(); step(event.key === 'ArrowUp' ? 1 : -1) } }} />
-        {numeric && <div style={{ position: 'absolute', right: 2, top: 2 }}>{(['up', 'down'] as const).map(direction => <Button key={direction} className={`w95-arrow-button w95-arrow-${direction}`} aria-label={`${direction === 'up' ? 'Increase' : 'Decrease'} number`} width={16} height={9} disabled={disabled || readOnly} onClick={() => step(direction === 'up' ? 1 : -1)}>{''}</Button>)}</div>}
-      </div>
+      {numeric ? <NumberInput aria-label={title} width={fieldWidth} disabled={disabled} readOnly={readOnly} value={value} onChange={setValue} />
+        : <TextInput width={fieldWidth} aria-label={title} disabled={disabled} readOnly={readOnly} value={value} onChange={event => setValue(event.target.value)} />}
     </PixelScale>
   </Demo>
 }
@@ -68,6 +65,6 @@ export function SpinnerDemo({ scale }: { scale: number }) {
   const [downDisabled, setDownDisabled] = useState(false)
   const [value, setValue] = useState(0)
   return <Demo title="Spinner" controls={<><Toggle title="Spinner" label="Disable up" value={upDisabled} onChange={setUpDisabled} /><Toggle title="Spinner" label="Disable down" value={downDisabled} onChange={setDownDisabled} /><span aria-live="polite">Value: {value}</span></>}>
-    <PixelScale scale={scale} width={16} height={20}>{(['up', 'down'] as const).map(direction => <Button key={direction} className={`w95-arrow-button w95-arrow-${direction}`} aria-label={`Spinner ${direction}`} width={16} height={10} disabled={direction === 'up' ? upDisabled : downDisabled} onClick={() => setValue(value + (direction === 'up' ? 1 : -1))}>{''}</Button>)}</PixelScale>
+    <PixelScale scale={scale} width={16} height={20}><Spinner upDisabled={upDisabled} downDisabled={downDisabled} onStep={direction => setValue(value => value + direction)} /></PixelScale>
   </Demo>
 }

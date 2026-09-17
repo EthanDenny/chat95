@@ -1,9 +1,11 @@
+import { IconButton } from '../components/IconButton'
+import { StatusField } from '../components/StatusBar'
 import { useRef } from 'react'
 import { ScrollArea } from '../components/ScrollArea'
 import { panelLayout } from './panelLayout'
 import { panelLabels, panelNames } from './model'
 import type { AppWindow } from './model'
-import { SizeGrip } from './SizeGrip'
+import { SizeGrip } from '../components/SizeGrip'
 
 export function ControlPanelView({ window: w, selected, scroll, onScroll, onSelect, onOpen }: {
   window: AppWindow; selected: number; scroll: number; onScroll: (value: number) => void; onSelect: (index: number) => void; onOpen: (index: number) => void
@@ -21,7 +23,7 @@ export function ControlPanelView({ window: w, selected, scroll, onScroll, onSele
   return <>
     <div className="w95-inset" style={{ position: 'absolute', left: 4, top: 42, width: w.width - 8, height: w.height - 65, padding: 2 }}>
       <ScrollArea label="Control Panel icons" width={w.width - 12} height={layout.page} contentWidth={w.width - 12 - (layout.overflow ? 16 : 0)} contentHeight={layout.total} vertical={layout.overflow} y={scroll} onScroll={(_x, y) => onScroll(y)}>
-        {panelNames.map((name, index) => <button key={name} type="button" ref={element => { buttons.current[index] = element }} className="w95-panel-icon w95-native-text" aria-label={name} aria-pressed={selected === index} tabIndex={index === Math.max(0, selected) ? 0 : -1}
+        {panelNames.map((name, index) => <IconButton key={name} icon={`/apps/applet-${index}.png`} ref={element => { buttons.current[index] = element }} aria-label={name} selected={selected === index} tabIndex={index === Math.max(0, selected) ? 0 : -1}
           style={{ position: 'absolute', left: 2 + index % layout.columns * 75, top: 1 + Math.floor(index / layout.columns) * 75 }}
           onClick={() => onSelect(index)} onDoubleClick={() => onOpen(index)} onKeyDown={event => {
             const movement: Record<string, number> = { ArrowLeft: -1, ArrowRight: 1, ArrowUp: -layout.columns, ArrowDown: layout.columns, PageUp: -Math.floor(layout.page / 75) * layout.columns, PageDown: Math.floor(layout.page / 75) * layout.columns }
@@ -32,11 +34,11 @@ export function ControlPanelView({ window: w, selected, scroll, onScroll, onSele
               const match = panelNames.findIndex(name => name.toLowerCase().startsWith(text)); if (match >= 0) { event.preventDefault(); select(match) }
             }
           }}>
-          <img src={`/apps/applet-${index}.png`} alt="" width={32} height={32} draggable={false} /><span>{panelLabels[index].map((line, i) => <span key={i} style={{ display: 'block' }}>{line}</span>)}</span>
-        </button>)}
+          {panelLabels[index].map((line, i) => <span key={i} style={{ display: 'block' }}>{line}</span>)}
+        </IconButton>)}
       </ScrollArea>
     </div>
-    <div className="w95-app-status w95-native-text" style={{ position: 'absolute', left: 4, bottom: 4, width: w.width - 8, height: 17 }}>{selected < 0 ? '20 object(s)' : panelNames[selected]}</div>
+    <StatusField variant="application" style={{ position: 'absolute', left: 4, bottom: 4, width: w.width - 8, height: 17 }}>{selected < 0 ? '20 object(s)' : panelNames[selected]}</StatusField>
     <SizeGrip />
   </>
 }

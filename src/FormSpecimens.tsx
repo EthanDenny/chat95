@@ -1,4 +1,5 @@
-import { Button } from './components/Button'
+import { NumberInput } from './components/NumberInput'
+import { Spinner } from './components/Spinner'
 import type { ReactNode } from 'react'
 import { Checkbox, Radio } from './components/Choice'
 import { Dropdown } from './components/Dropdown'
@@ -46,12 +47,11 @@ export function DropdownSpecimens({ scale, arrowOnly = false }: { scale: number;
 export function NumberSpecimens({ scale }: { scale: number }) {
   return [false, true].flatMap(disabled => [false, true].map(filled => <Specimen key={`${disabled}-${filled}`} title={`${disabled ? 'Disabled' : 'Default'}${filled ? ' filled' : ''}`} scale={scale} width={80} height={60}>
     <span className="w95-native-text" style={{ position: 'absolute', left: 12, top: 9, color: disabled ? '#808080' : '#000' }}>Label:</span>
-    <TextInput aria-label="Number" style={{ position: 'absolute', left: 12, top: 27, paddingRight: 18 }} width={48} defaultValue={filled ? '000' : ''} disabled={disabled} />
-    <div style={{ position: 'absolute', left: 42, top: 29 }}>{(['up', 'down'] as const).map(direction => <Button key={direction} className={`w95-arrow-button w95-arrow-${direction}`} width={16} height={9} disabled={disabled} aria-label={direction}>{''}</Button>)}</div>
+    <NumberInput aria-label="Number" containerStyle={{ position: 'absolute', left: 12, top: 27 }} width={48} value={filled ? '000' : ''} onChange={() => {}} disabled={disabled} />
   </Specimen>))
 }
 export function SpinnerSpecimens({ scale }: { scale: number }) {
   return [false, true].flatMap(upDisabled => [false, true].map(downDisabled => <Specimen key={`${upDisabled}-${downDisabled}`} title={`${upDisabled ? 'Disabled' : 'Active'} / ${downDisabled ? 'Disabled' : 'Active'}`} scale={scale} width={40} height={40}>
-    <div style={{ position: 'absolute', left: 12, top: 12 }}>{(['up', 'down'] as const).map(direction => <Button key={direction} className={`w95-arrow-button w95-arrow-${direction}`} width={16} height={8} disabled={direction === 'up' ? upDisabled : downDisabled} aria-label={direction}>{''}</Button>)}</div>
+    <Spinner height={16} style={{ position: 'absolute', left: 12, top: 12 }} upDisabled={upDisabled} downDisabled={downDisabled} onStep={() => {}} />
   </Specimen>))
 }
