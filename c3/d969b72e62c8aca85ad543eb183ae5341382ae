@@ -1,0 +1,295 @@
+src/components/TaskbarButton.tsx
+  s_0416b3259c65b9::t_d3b0d813880e78 1-9,11-13
+  s_0416b3259c65b9::t_285ff7a1342da3 10
+public/controls/choice-2.svg
+  s_0416b3259c65b9::t_bba8be7932f2b2 1
+src/apps/ControlPanelView.tsx
+  s_0416b3259c65b9::t_9d9d0721b0e0f2 1-42
+public/reference/comparisons/index.html
+  s_0416b3259c65b9::t_39b3b464901e88 1
+public/controls/choice-1.svg
+  s_0416b3259c65b9::t_bba8be7932f2b2 1
+src/apps/calculator.ts
+  s_0416b3259c65b9::t_40ebac89de33d5 39
+src/components/PixelScale.tsx
+  s_0416b3259c65b9::t_51a83bcaf54ba9 1-20
+src/theme.ts
+  s_0416b3259c65b9::t_26de031701373f 1-21
+src/App.css
+  s_0416b3259c65b9::t_59db375720b724 40-48
+  s_0416b3259c65b9::t_717a91ab2a7425 49-50
+  s_0416b3259c65b9::t_597dfb704c96c0 3,6-7,21
+  s_0416b3259c65b9::t_014464cb2e2bd6 5,37
+  s_0416b3259c65b9::t_7146e3b1efaa2f 22
+  s_0416b3259c65b9::t_d3b0d813880e78 23-28
+  s_0416b3259c65b9::t_285ff7a1342da3 29-36,38-39
+docs/dom-migration.md
+  s_0416b3259c65b9::t_16d542212555c6 1-45
+public/reference/apps/README.md
+  s_0416b3259c65b9::t_48376a61ba603d 51-53
+  s_0416b3259c65b9::t_597dfb704c96c0 21,54
+src/components/NativeText.tsx
+  s_0416b3259c65b9::t_26de031701373f 6
+  s_0416b3259c65b9::t_b4a9af7fb611f6 1-5,7-14
+src/apps/SizeGrip.tsx
+  s_0416b3259c65b9::t_9d9d0721b0e0f2 1-4
+scripts/verify-apps.ts
+  s_0416b3259c65b9::t_597dfb704c96c0 46
+  s_0416b3259c65b9::t_26de031701373f 13-15
+src/apps/CalculatorView.tsx
+  s_0416b3259c65b9::t_26de031701373f 4
+  s_0416b3259c65b9::t_9d9d0721b0e0f2 1-3,5-15
+scripts/reference/apps/chrome.ts
+  s_0416b3259c65b9::t_26de031701373f 1-29
+src/Scrollbar.tsx
+  s_0416b3259c65b9::t_5e44da67f90024 79,89-104
+  s_0416b3259c65b9::t_363eca4128f61e 5-6,29,59,74-78,80-83,86-88
+  s_0416b3259c65b9::t_26de031701373f 3-4
+src/components/TreeView.tsx
+  s_0416b3259c65b9::t_26de031701373f 3
+  s_0416b3259c65b9::t_5d241a493a6173 1-2,4-101
+scripts/reference/collectionControls.ts
+  s_0416b3259c65b9::t_2a79f81190e642 1
+  s_0416b3259c65b9::t_16d542212555c6 2
+  s_0416b3259c65b9::t_26de031701373f 3-121
+scripts/reference/apps/desktop.ts
+  s_0416b3259c65b9::t_26de031701373f 3,6,9,14,26-37,39-50,53-54,56-64
+  s_0416b3259c65b9::t_2a79f81190e642 7
+scripts/reference/win95.ts
+  s_0416b3259c65b9::t_26de031701373f 1-7,57
+public/controls/choice-3.svg
+  s_0416b3259c65b9::t_bba8be7932f2b2 1
+src/apps/useDesktop.ts
+  s_0416b3259c65b9::t_26de031701373f 4
+src/VisualSpecimens.tsx
+  s_0416b3259c65b9::t_30b6b4ba410de2 1-8,11-41
+  s_0416b3259c65b9::t_26de031701373f 9-10
+scripts/reference/kitIcons.ts
+  s_0416b3259c65b9::t_26de031701373f 1-26
+src/apps/model.ts
+  s_0416b3259c65b9::t_26de031701373f 3
+scripts/requirements-fonts.txt
+  s_0416b3259c65b9::t_0f293813f8d8c6 2
+src/components/fonts.css
+  s_0416b3259c65b9::t_b4a9af7fb611f6 1-15
+src/ChromeSpecimens.tsx
+  s_0416b3259c65b9::t_26de031701373f 4-5
+  s_0416b3259c65b9::t_5eb9831788d766 1-3,6-28
+src/apps/WindowTracking.tsx
+  s_0416b3259c65b9::t_26de031701373f 1
+  s_0416b3259c65b9::t_59db375720b724 2-7
+src/apps/WindowResizeHandles.tsx
+  s_0416b3259c65b9::t_26de031701373f 4
+  s_0416b3259c65b9::t_597dfb704c96c0 28
+src/apps/keyboard.ts
+  s_0416b3259c65b9::t_717a91ab2a7425 1-48
+src/useWin95Cursors.ts
+  s_0416b3259c65b9::t_5867c4e51ec487 4,9-16
+src/apps/DesktopWindowChrome.tsx
+  s_0416b3259c65b9::t_d3b0d813880e78 1-3,5-23
+  s_0416b3259c65b9::t_26de031701373f 4
+src/apps/AppDialog.tsx
+  s_0416b3259c65b9::t_2a79f81190e642 15,17-18
+  s_0416b3259c65b9::t_26de031701373f 5
+  s_0416b3259c65b9::t_717a91ab2a7425 24
+  s_0416b3259c65b9::t_33bf2163a06fd7 1,3-4,6,8,10-14,21-23,25-36
+  s_0416b3259c65b9::t_1fbbd4f98dd3f4 2,7,9,16,19-20
+src/components/TextInput.tsx
+  s_0416b3259c65b9::t_5dc769717d3c84 1-10
+scripts/reference/apps/assets.ts
+  s_0416b3259c65b9::t_26de031701373f 1-14
+scripts/reference/referenceText.ts
+  s_0416b3259c65b9::t_26de031701373f 1-20
+src/apps/appCommands.ts
+  s_0416b3259c65b9::t_26de031701373f 1-9
+src/InteractiveWindow.tsx
+  s_0416b3259c65b9::t_285ff7a1342da3 2-6,22,24-44
+  s_0416b3259c65b9::t_26de031701373f 7
+src/components/Button.tsx
+  s_0416b3259c65b9::t_26de031701373f 6
+  s_0416b3259c65b9::t_51a83bcaf54ba9 2,10
+  s_0416b3259c65b9::t_f7933e29ef7052 1,5,7-9,11-15,19-47
+  s_0416b3259c65b9::t_c1493bc82e306e 4,16
+  s_0416b3259c65b9::t_bba8be7932f2b2 18
+  s_0416b3259c65b9::t_b4a9af7fb611f6 3,17
+scripts/reference/apps/paintBrowser.ts
+  s_0416b3259c65b9::t_26de031701373f 3,6-8,32,65,67
+src/components/Choice.tsx
+  s_0416b3259c65b9::t_5dc769717d3c84 1-15
+scripts/verify-fonts.ts
+  s_0416b3259c65b9::t_26de031701373f 1,4
+README.md
+  s_0416b3259c65b9::t_597dfb704c96c0 3-5,7,14-63,65-67,69,73-78,81-85,87-90
+src/components/choice-glyphs.css
+  s_0416b3259c65b9::t_5dc769717d3c84 1
+  s_0416b3259c65b9::t_bba8be7932f2b2 2-7
+src/collectionModel.ts
+  s_0416b3259c65b9::t_26de031701373f 1-36
+src/Specimen.tsx
+  s_0416b3259c65b9::t_87bdbfab37a50b 1-5
+public/controls/choice-0.svg
+  s_0416b3259c65b9::t_bba8be7932f2b2 1
+src/InteractiveForms.tsx
+  s_0416b3259c65b9::t_06ba24ebe07054 1-2,25,27-31,43-50,71
+  s_0416b3259c65b9::t_363eca4128f61e 5-7,59-62
+  s_0416b3259c65b9::t_51a83bcaf54ba9 3-4,14
+public/controls/choice-5.svg
+  s_0416b3259c65b9::t_bba8be7932f2b2 1
+scripts/test-dom-migration.ts
+  s_0416b3259c65b9::t_00bcb9214a97c8 1-28
+docs/keyboard-shortcuts.md
+  s_0416b3259c65b9::t_eb93301c0ee7a8 1-37
+src/InteractiveVisuals.tsx
+  s_0416b3259c65b9::t_26de031701373f 7
+  s_0416b3259c65b9::t_87bdbfab37a50b 2-6,11-15,18-21,24-27,30-33,35,37-48
+src/components/SurfaceBox.tsx
+  s_0416b3259c65b9::t_87bdbfab37a50b 1-9
+src/CollectionSpecimens.tsx
+  s_0416b3259c65b9::t_16d542212555c6 19
+  s_0416b3259c65b9::t_2a79f81190e642 21,54
+  s_0416b3259c65b9::t_4c1ff231ffdd4f 1-18,20,22-53,55-56
+public/controls/choice-4.svg
+  s_0416b3259c65b9::t_bba8be7932f2b2 1
+src/apps/BrowserView.tsx
+  s_0416b3259c65b9::t_33bf2163a06fd7 1-8,10-62
+  s_0416b3259c65b9::t_26de031701373f 9
+scripts/reference/apps/render.ts
+  s_0416b3259c65b9::t_26de031701373f 1-4,6-7,10-11,31,33-34,36,60,64
+src/apps/AppMenu.tsx
+  s_0416b3259c65b9::t_33bf2163a06fd7 1,4-8,10-12,19,23,30,32-34,36-37,46-47,49-51
+  s_0416b3259c65b9::t_00bcb9214a97c8 13
+  s_0416b3259c65b9::t_717a91ab2a7425 38-45
+  s_0416b3259c65b9::t_014464cb2e2bd6 9,14-18,21-22,29,31,35
+  s_0416b3259c65b9::t_26de031701373f 2-3,20
+  s_0416b3259c65b9::t_40ebac89de33d5 24-28,48
+src/apps/desktopState.ts
+  s_0416b3259c65b9::t_26de031701373f 1-2
+src/apps/windowSizing.ts
+  s_0416b3259c65b9::t_26de031701373f 2
+public/fonts/README.md
+  s_0416b3259c65b9::t_597dfb704c96c0 23,84-96
+src/icons.ts
+  s_0416b3259c65b9::t_26de031701373f 1-2
+src/components/controls.css
+  s_0416b3259c65b9::t_33bf2163a06fd7 258-264,266-276
+  s_0416b3259c65b9::t_4c1ff231ffdd4f 279-287
+  s_0416b3259c65b9::t_16d542212555c6 185
+  s_0416b3259c65b9::t_bba8be7932f2b2 60,69
+  s_0416b3259c65b9::t_9d9d0721b0e0f2 246-257
+  s_0416b3259c65b9::t_014464cb2e2bd6 163,265,288-289
+  s_0416b3259c65b9::t_307ebcf0f37064 201,203-222
+  s_0416b3259c65b9::t_f7933e29ef7052 2-57
+  s_0416b3259c65b9::t_5dc769717d3c84 58-59,61-68,70-75,77-92,94-116
+  s_0416b3259c65b9::t_5d241a493a6173 223-228
+  s_0416b3259c65b9::t_fcd3409b1e70b2 93
+  s_0416b3259c65b9::t_5eb9831788d766 244-245
+  s_0416b3259c65b9::t_06ba24ebe07054 117-123,125-132
+  s_0416b3259c65b9::t_77b28147870445 76,124
+  s_0416b3259c65b9::t_d3b0d813880e78 229-240
+  s_0416b3259c65b9::t_87bdbfab37a50b 277-278
+  s_0416b3259c65b9::t_b4a9af7fb611f6 1,202
+  s_0416b3259c65b9::t_a5895a39043015 133-162,164-168,170-184,186-195
+  s_0416b3259c65b9::t_5e44da67f90024 169,196-200
+  s_0416b3259c65b9::t_285ff7a1342da3 241-243
+scripts/build-cursors.ts
+  s_0416b3259c65b9::t_5867c4e51ec487 1-15
+src/DesignPage.tsx
+  s_0416b3259c65b9::t_30b6b4ba410de2 3-5,8-9,17,27-28,33-58
+  s_0416b3259c65b9::t_5eb9831788d766 2
+  s_0416b3259c65b9::t_51a83bcaf54ba9 6-7
+  s_0416b3259c65b9::t_26de031701373f 10
+src/FileListPreview.tsx
+  s_0416b3259c65b9::t_f0b491905a641c 1,3-4,11-13
+  s_0416b3259c65b9::t_26de031701373f 2
+src/App.tsx
+  s_0416b3259c65b9::t_e080835f2dadcd 83
+  s_0416b3259c65b9::t_eb93301c0ee7a8 63-64
+  s_0416b3259c65b9::t_1fbbd4f98dd3f4 110
+  s_0416b3259c65b9::t_59db375720b724 10-17,22,29,42,45,47,52,55-57,68,71-78,81,96-97,99,102-109,111-112
+  s_0416b3259c65b9::t_285ff7a1342da3 114
+  s_0416b3259c65b9::t_2a79f81190e642 31
+  s_0416b3259c65b9::t_717a91ab2a7425 6,58-62,65-66,79-80,82,84-95
+  s_0416b3259c65b9::t_26de031701373f 19-20
+  s_0416b3259c65b9::t_7146e3b1efaa2f 113
+src/components/CaptionButton.tsx
+  s_0416b3259c65b9::t_307ebcf0f37064 1-17
+scripts/test-keyboard.ts
+  s_0416b3259c65b9::t_e080835f2dadcd 1-49
+src/captionGlyphs.ts
+  s_0416b3259c65b9::t_307ebcf0f37064 1-7
+src/components/ScrollArea.tsx
+  s_0416b3259c65b9::t_9d9d0721b0e0f2 1,3-4,6,8-32,34-42
+  s_0416b3259c65b9::t_26de031701373f 2,5,7,33
+scripts/build-web-font.py
+  s_0416b3259c65b9::t_b4a9af7fb611f6 1,8-58
+  s_0416b3259c65b9::t_9dfa0726c0b36e 2-7
+src/apps/calculatorLayout.ts
+  s_0416b3259c65b9::t_26de031701373f 1-11
+src/components/Dropdown.tsx
+  s_0416b3259c65b9::t_363eca4128f61e 1-3,5,7-9,11-12,15-16,20-22,24,26-28,30-34,36-47,49,52-55
+  s_0416b3259c65b9::t_5e44da67f90024 35
+  s_0416b3259c65b9::t_6b386b03ae210d 4,6,14,17-18,23,48
+  s_0416b3259c65b9::t_014464cb2e2bd6 10,13,19,25,29,50-51
+src/components/ListView.tsx
+  s_0416b3259c65b9::t_06f0204c258791 1,45-48,51-54
+  s_0416b3259c65b9::t_26de031701373f 2-3
+  s_0416b3259c65b9::t_f0b491905a641c 4-11,13-14,16-24,27-38,41-44,56-87,89-97,99,101-113
+  s_0416b3259c65b9::t_4c1ff231ffdd4f 12,15,25-26,39-40,49-50,55,98,100
+  s_0416b3259c65b9::t_5e44da67f90024 88
+src/fileListData.ts
+  s_0416b3259c65b9::t_26de031701373f 1-8
+public/reference/README.md
+  s_0416b3259c65b9::t_16d542212555c6 79
+src/LiveScrollPane.tsx
+  s_0416b3259c65b9::t_87bdbfab37a50b 1-2,5-9
+public/cursors/README.md
+  s_0416b3259c65b9::t_597dfb704c96c0 15-16
+src/components/WindowChrome.tsx
+  s_0416b3259c65b9::t_307ebcf0f37064 1-13
+src/apps/DesktopTaskbar.tsx
+  s_0416b3259c65b9::t_285ff7a1342da3 1-3,5-6,8-14,16-17,21-22,24,26-29,31-34,36-48
+  s_0416b3259c65b9::t_26de031701373f 4,7
+  s_0416b3259c65b9::t_597dfb704c96c0 23
+  s_0416b3259c65b9::t_014464cb2e2bd6 15,18-20,25,30,35
+src/apps/browserLayout.ts
+  s_0416b3259c65b9::t_26de031701373f 1
+src/InteractiveCollections.tsx
+  s_0416b3259c65b9::t_5d241a493a6173 3-5,45-48
+  s_0416b3259c65b9::t_6b386b03ae210d 22
+  s_0416b3259c65b9::t_f0b491905a641c 1-2,11-14,20,23-40
+  s_0416b3259c65b9::t_4f21f595575d1f 10,41
+  s_0416b3259c65b9::t_dca8a2540234a2 42-44
+scripts/verify-web-font.py
+  s_0416b3259c65b9::t_0f293813f8d8c6 1-6
+  s_0416b3259c65b9::t_b4a9af7fb611f6 7-12,41
+  s_0416b3259c65b9::t_307ebcf0f37064 13-40
+scripts/reference/apps/edges.ts
+  s_0416b3259c65b9::t_26de031701373f 1-26
+scripts/reference/apps/paintCalculator.ts
+  s_0416b3259c65b9::t_26de031701373f 1-21
+scripts/test-fonts.ts
+  s_0416b3259c65b9::t_26de031701373f 1,5
+src/FormSpecimens.tsx
+  s_0416b3259c65b9::t_6b386b03ae210d 4,30-41
+  s_0416b3259c65b9::t_0f293813f8d8c6 2-3,5-29,42-43,57
+  s_0416b3259c65b9::t_87bdbfab37a50b 1,44-50,52-55
+  s_0416b3259c65b9::t_25ea58f7c2a8a5 51,56
+scripts/reference/apps/paintPanel.ts
+  s_0416b3259c65b9::t_26de031701373f 1-50
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "c3d969b72e62c8aca85ad543eb183ae5341382ae",
+  "prompts": {},
+  "sessions": {
+    "s_0416b3259c65b9": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0aa71-00d3-78d1-863a-34f254ad9e1b",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "Ethan Denny <ethandenny@protonmail.com>"
+    }
+  }
+}
