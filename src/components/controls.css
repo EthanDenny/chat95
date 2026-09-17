@@ -308,7 +308,9 @@ button.w95-browser-links { padding: 4px 6px; margin: 0; border: 0; border-radius
 
 .w95-textarea-frame { position: relative; display: block; flex: none; overflow: hidden; }
 .w95-textarea-frame[data-disabled=true] { --inset-face: #c0c0c0; }
-textarea.w95-textarea { position: absolute; inset: 4px; width: calc(100% - 8px); height: calc(100% - 8px); display: block; resize: none; border: 0; border-radius: 0; padding: 1px 2px; background: #fff; color: #000; line-height: 17px; outline: none; }
+.w95-textarea-scrollbar { position: absolute; right: 2px; top: 2px; }
+textarea.w95-textarea { position: absolute; left: 4px; top: 4px; right: 20px; bottom: 4px; width: auto; height: auto; display: block; resize: none; border: 0; border-radius: 0; padding: 1px 2px; overflow-x: hidden; overflow-y: auto; scrollbar-width: none; background: #fff; color: #000; line-height: 17px; outline: none; }
+textarea.w95-textarea::-webkit-scrollbar { display: none; }
 textarea.w95-textarea:disabled { background: #c0c0c0; color: #808080; }
 textarea.w95-textarea::selection { background: #000080; color: #fff; }
 textarea.w95-textarea::placeholder { color: #808080; opacity: 1; }
