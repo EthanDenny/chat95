@@ -1,8 +1,5 @@
 import { useState } from 'react'
-import { Button } from '../components/Button'
-import { Dialog } from '../components/Dialog'
-import { TextInput } from '../components/TextInput'
-import { Dropdown } from '../components/Dropdown'
+import { Button, Dialog, Dropdown, TextInput } from '@ethandenny/win95-ui'
 import { folderNameError } from './folders'
 import type { ConversationFolder } from './model'
 

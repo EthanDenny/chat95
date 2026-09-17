@@ -11,18 +11,16 @@
     "deploy": "npm run build && wrangler deploy",
     "lint": "oxlint",
     "preview": "vite preview",
-    "test": "tsx --tsconfig tsconfig.app.json --test scripts/test-*.ts",
-    "verify:apps": "tsx scripts/verify-apps.ts",
-    "verify:fonts": "tsx scripts/verify-fonts.ts"
+    "test": "tsx --tsconfig tsconfig.app.json --test scripts/test-*.ts"
   },
   "dependencies": {
+    "@ethandenny/win95-ui": "file:vendor/ethandenny-win95-ui-0.1.0.tgz",
     "emoji-regex": "^11.0.0",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
     "react-markdown": "^10.1.0"
   },
   "devDependencies": {
-    "@napi-rs/canvas": "^1.0.9",
     "@types/hast": "^3.0.5",
     "@types/node": "^24.13.3",
     "@types/react": "^19.2.18",

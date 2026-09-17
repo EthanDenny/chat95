@@ -1,7 +1,5 @@
 import { useLayoutEffect, useRef, useState } from 'react'
-import { ScrollArea } from '../components/ScrollArea'
-import { Icon } from '../components/Icon'
-import { Button } from '../components/Button'
+import { Button, Icon, ScrollArea } from '@ethandenny/win95-ui'
 import { presentMessages } from './messagePresentation'
 import { AssistantMarkdown } from './AssistantMarkdown'
 import type { Message } from './model'

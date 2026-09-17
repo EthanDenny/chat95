@@ -1,9 +1,5 @@
 import { useState } from 'react'
-import { Button } from '../components/Button'
-import { Dialog } from '../components/Dialog'
-import { Icon } from '../components/Icon'
-import { ListView } from '../components/ListView'
-import { TextArea } from '../components/TextArea'
+import { Button, Dialog, Icon, ListView, TextArea } from '@ethandenny/win95-ui'
 
 export function ToolActivityDialog({ entries, width, height, onClose, restoreFocus }: {
   entries: string[]; width: number; height: number; onClose: () => void; restoreFocus: () => HTMLElement | null

@@ -1,5 +1,4 @@
-import { Toolbar } from '../components/Toolbar'
-import { Icon } from '../components/Icon'
+import { Icon, Toolbar } from '@ethandenny/win95-ui'
 
 export function ChatToolbar({ onNew, onSave, onDelete, onFind, onStop, canSave, canDelete = true, pending }: {
   onNew: () => void; onSave: () => void; onDelete: () => void; onFind: () => void; onStop: () => void

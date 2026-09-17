@@ -4,8 +4,8 @@ import { resolve, relative } from 'node:path'
 import test from 'node:test'
 import ts from 'typescript'
 
-// The shipping UI must remain DOM-based, including lazy gallery modules.
-// Offline screenshot renderers live in scripts/reference and may use canvas.
+// The shipping Chat95 UI must remain DOM-based. Component implementation and
+// visual reference tests live in the separately versioned Win95 UI package.
 test('browser source contains no canvas UI or offline renderer dependencies', () => {
   const root = resolve('src')
   const files = readdirSync(root, { recursive: true }).filter((file): file is string => typeof file === 'string' && /\.tsx?$/.test(file))

@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { MenuBar } from '../components/MenuBar'
-import { Menu, MenuItem, MenuSeparator } from '../components/Menu'
+import { Menu, MenuBar, MenuItem, MenuSeparator } from '@ethandenny/win95-ui'
 
 export type ChatMenuItem = { label: string; action: () => void; disabled?: boolean; checked?: boolean } | 'separator'
 export type ChatMenuGroup = { label: string; mnemonic?: string; items: ChatMenuItem[] }

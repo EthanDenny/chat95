@@ -1,6 +1,4 @@
-import { Button } from '../components/Button'
-import { Dialog } from '../components/Dialog'
-import { Icon } from '../components/Icon'
+import { Button, Dialog, Icon } from '@ethandenny/win95-ui'
 import type { PendingToolApproval } from './useToolConfirmations'
 
 export function ToolApprovalDialog({ approval }: { approval: PendingToolApproval }) {

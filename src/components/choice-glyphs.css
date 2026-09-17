@@ -1,7 +1,0 @@
-/* Exact pixel patterns from the existing form painter, represented as SVG. */
-.w95-radio:not(:disabled):not(:checked) { background-image: url("/controls/choice-0.svg"); }
-.w95-radio:not(:disabled):checked { background-image: url("/controls/choice-1.svg"); }
-.w95-radio:disabled:not(:checked) { background-image: url("/controls/choice-2.svg"); }
-.w95-radio:disabled:checked { background-image: url("/controls/choice-3.svg"); }
-.w95-checkbox:not(:disabled):checked { --check: url("/controls/choice-4.svg"); }
-.w95-checkbox:disabled:checked { --check: url("/controls/choice-5.svg"); }

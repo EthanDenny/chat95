@@ -1,11 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { Button } from '../components/Button'
-import { TextArea } from '../components/TextArea'
-import { TextInput } from '../components/TextInput'
-import { TitleBar, WindowFrame } from '../components/WindowChrome'
-import { CaptionButton } from '../components/CaptionButton'
-import { StatusBar } from '../components/StatusBar'
-import { SplitPane } from '../components/SplitPane'
+import { Button, CaptionButton, Dialog, Icon, SplitPane, StatusBar, TextArea, TextInput, TitleBar, WindowFrame, iconUrl, useWin95Cursors } from '@ethandenny/win95-ui'
 import { ChatMenu } from './ChatMenu'
 import { ChatToolbar } from './ChatToolbar'
 import { FolderDialog } from './FolderDialog'
@@ -13,9 +7,6 @@ import { ToolApprovalDialog } from './ToolApprovalDialog'
 import { ToolActivityDialog } from './ToolActivityDialog'
 import type { FolderAction } from './FolderDialog'
 import type { FolderSelection } from './folderContents'
-import { Dialog } from '../components/Dialog'
-import { Icon } from '../components/Icon'
-import { useWin95Cursors } from '../useWin95Cursors'
 import { ChatSidebar } from './ChatSidebar'
 import { ChatMessages } from './ChatMessages'
 import { useChat } from './useChat'
@@ -127,7 +118,7 @@ export default function ChatPage() {
   return <main className="chat-viewport" aria-label="Chat95">
     <WindowFrame className="chat-shell w95-native-text" style={{ width: display.width, height: display.height, transform: `scale(${CHAT_SCALE})`, transformOrigin: 'top left' }}>
       <div inert={modalOpen}>
-        <TitleBar title={`${chat.title} - Chat95`} icon="/icons/0-16.png" className="chat-titlebar" />
+        <TitleBar title={`${chat.title} - Chat95`} icon={iconUrl('My Computer')} className="chat-titlebar" />
         <div className="chat-window-controls" aria-label="Chat95 window controls">
           <CaptionButton kind="minimize" aria-label="Minimize browser window (unavailable)" title="Webpages cannot minimize the browser window. Use the browser’s minimize control." data-window-control="minimize" disabled />
           <CaptionButton kind={browserWindow.fullscreen ? 'restore' : 'maximize'} aria-label={browserWindow.fullscreen ? 'Exit fullscreen' : 'Enter fullscreen'}

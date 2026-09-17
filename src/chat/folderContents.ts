@@ -1,4 +1,4 @@
-import type { ListEntry } from '../components/ListView'
+import type { ListEntry } from '@ethandenny/win95-ui'
 import type { Conversation, ConversationFolder } from './model'
 
 export type FolderItem = ListEntry & { id: string; kind: 'folder' | 'chat' }

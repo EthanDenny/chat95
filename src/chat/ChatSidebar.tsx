@@ -1,7 +1,5 @@
 import { useLayoutEffect, useRef, useState } from 'react'
-import { ListView } from '../components/ListView'
-import { Dropdown } from '../components/Dropdown'
-import { Icon } from '../components/Icon'
+import { Dropdown, Icon, ListView } from '@ethandenny/win95-ui'
 import { folderContents } from './folderContents'
 import type { FolderSelection } from './folderContents'
 import type { Conversation, ConversationFolder } from './model'

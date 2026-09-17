@@ -1,7 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import TestPages from './TestPages'
+import ChatPage from './chat/ChatPage'
+import '@ethandenny/win95-ui/styles.css'
 import './index.css'
-import './cursors.css'
 
-createRoot(document.getElementById('root')!).render(<StrictMode><TestPages /></StrictMode>)
+createRoot(document.getElementById('root')!).render(<StrictMode><ChatPage /></StrictMode>)

@@ -84,7 +84,7 @@
 .chat-status { position: absolute !important; left: 4px; bottom: 4px; right: 4px; }
 .chat-menu { position: absolute; left: 3px; right: 3px; top: 23px; height: 20px; border-bottom: 1px solid #808080; box-shadow: 0 1px #fff; z-index: 5; }
 .chat-menu .w95-app-menu button { position: relative; padding-left: 21px; }
-.chat-menu-check { position: absolute; left: 6px; top: 6px; width: 7px; height: 7px; background: currentColor; mask: url(/controls/choice-4.svg) center / 7px 7px no-repeat; }
+.chat-menu-check { position: absolute; left: 6px; top: 6px; width: 7px; height: 7px; background: currentColor; mask: var(--win95-check-glyph) center / 7px 7px no-repeat; }
 .chat-dialog-overlay { position: absolute; inset: 0; z-index: 10; display: grid; place-items: center; }
 .chat-about, .chat-delete-notice { display: flex; gap: 12px; padding: 32px 14px 0; }
 .chat-about > img, .chat-delete-notice > img { flex: none; }
