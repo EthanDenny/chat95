@@ -1,0 +1,26 @@
+src/components/TextArea.tsx
+  s_f6d442c1a95ae0::t_07e5a9b4988b2d 5-7
+src/chat/ChatPage.css
+  s_f6d442c1a95ae0::t_07e5a9b4988b2d 41
+scripts/test-textarea.ts
+  s_f6d442c1a95ae0::t_07e5a9b4988b2d 5,8,11-15,17-18
+  s_f6d442c1a95ae0::t_86dba4963ffe42 6,9-10,16
+src/components/controls.css
+  s_f6d442c1a95ae0::t_07e5a9b4988b2d 309-312
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "02a5ec4ee49c3e8157299857849e5fef198ddfbf",
+  "prompts": {},
+  "sessions": {
+    "s_f6d442c1a95ae0": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0af51-07d4-7173-a75a-eb3161a50456",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Ethan Denny <ethandenny@protonmail.com>"
+    }
+  }
+}
