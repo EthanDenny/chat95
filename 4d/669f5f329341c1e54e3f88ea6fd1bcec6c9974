@@ -1,0 +1,124 @@
+scripts/test-chat.ts
+  s_0416b3259c65b9::t_09da563f5c3a32 42
+  s_b4e2175523b5f5::t_b8448a4563d83e 16,28,32-33,43-44,52,56-89
+  s_0416b3259c65b9::t_b55a0e89e6e54d 1-15,17-27,29-31,34-41,45-51,53-55
+.env.example
+  s_0416b3259c65b9::t_ab0afcbad9de9f 1-2
+  s_0416b3259c65b9::t_fc7b768e051a90 3
+src/TestPages.tsx
+  s_0416b3259c65b9::t_a7b297c0f516e4 3,8
+scripts/build-web-font.py
+  s_f6d442c1a95ae0::t_6f04211972207f 3,56-61
+src/fonts/bitmap-fonts.json
+  s_f6d442c1a95ae0::t_661c94c90fbc7f 1
+src/components/controls.css
+  s_0416b3259c65b9::t_a7b297c0f516e4 308-312
+src/chat/ChatSidebar.tsx
+  s_0416b3259c65b9::t_a59bb405369f1c 24
+  s_0416b3259c65b9::t_a7b297c0f516e4 1-3,5-7,10-11,14,18,23,25-26
+  s_0416b3259c65b9::t_275676cd2053b2 8-9,15-17,19
+  s_0416b3259c65b9::t_7fb2727a09e443 4,12-13,20-22
+public/fonts/README.md
+  s_f6d442c1a95ae0::t_6f04211972207f 89
+  s_f6d442c1a95ae0::t_9a9d5861194f24 13,96
+src/components/fonts.css
+  s_f6d442c1a95ae0::t_52df1e882d7c4f 2-15
+src/chat/useChat.ts
+  s_b4e2175523b5f5::t_b8448a4563d83e 29
+  s_0416b3259c65b9::t_ab0afcbad9de9f 1-28,30-58
+src/chat/ChatPage.css
+  s_0416b3259c65b9::t_82371cc199784f 40-41
+  s_b4e2175523b5f5::t_cbb19dffffdfee 3-5
+  s_0416b3259c65b9::t_3915afcff9eb66 6,12-13,33-35,37-39
+  s_0416b3259c65b9::t_275676cd2053b2 1-2,16-17,32
+  s_0416b3259c65b9::t_a7b297c0f516e4 7,9-11,14-15,18-31
+  s_0416b3259c65b9::t_7fb2727a09e443 8
+  s_0416b3259c65b9::t_2dfc1a4242f7d6 36
+src/components/TextArea.tsx
+  s_0416b3259c65b9::t_a7b297c0f516e4 1-6
+scripts/extract-font.py
+  s_f6d442c1a95ae0::t_9a9d5861194f24 20,25-28
+server/chat.ts
+  s_b4e2175523b5f5::t_b8448a4563d83e 72,75-82
+  s_0416b3259c65b9::t_ab0afcbad9de9f 1,3-71,73-74,83,85-100,102-108
+  s_0416b3259c65b9::t_74eb091b160972 2,84,101
+scripts/test-fonts.ts
+  s_f6d442c1a95ae0::t_9a9d5861194f24 5-16
+README.md
+  s_0416b3259c65b9::t_fc7b768e051a90 40
+  s_0416b3259c65b9::t_82371cc199784f 50-54
+  s_0416b3259c65b9::t_a59bb405369f1c 11-12,16,37-39,41-49,66
+src/catalog/stories.tsx
+  s_0416b3259c65b9::t_a7b297c0f516e4 8,19
+src/components/Window.tsx
+  s_b4e2175523b5f5::t_514bd5d784e790 18
+  s_b4e2175523b5f5::t_7c458b5ec33765 20
+src/chat/ChatMessages.tsx
+  s_0416b3259c65b9::t_275676cd2053b2 9-10,13,18-21,29
+  s_0416b3259c65b9::t_a59bb405369f1c 7,31-32
+  s_0416b3259c65b9::t_a7b297c0f516e4 1-6,8,11-12,14-17,22-28,30,33-36
+src/chat/ChatPage.tsx
+  s_0416b3259c65b9::t_275676cd2053b2 27,81
+  s_0416b3259c65b9::t_3915afcff9eb66 7-8,18,21-23,28-39,59-76,88-89,96-101
+  s_0416b3259c65b9::t_a7b297c0f516e4 1-4,6,9-12,15-16,19-20,26,41-48,51,77,79-80,82-84,86-87,102-104
+  s_b4e2175523b5f5::t_f0eb37ce02bd95 5,52,58
+  s_0416b3259c65b9::t_725848cbabe52d 17,40
+  s_0416b3259c65b9::t_82371cc199784f 14,24,49-50,53-57,90-95
+  s_0416b3259c65b9::t_a59bb405369f1c 13,25,78,85
+src/chat/useBrowserWindow.ts
+  s_0416b3259c65b9::t_82371cc199784f 1-37
+src/chat/ChatMenu.tsx
+  s_0416b3259c65b9::t_2dfc1a4242f7d6 49
+  s_0416b3259c65b9::t_3c4e58a8a80f1d 10,17,45
+  s_0416b3259c65b9::t_3915afcff9eb66 1-9,11-16,18-44,46-48,50-53
+scripts/verify-web-font.py
+  s_f6d442c1a95ae0::t_6f04211972207f 3,9,14-17
+  s_f6d442c1a95ae0::t_9a9d5861194f24 23-26
+src/catalog/entries.ts
+  s_0416b3259c65b9::t_a7b297c0f516e4 7
+src/components/README.md
+  s_0416b3259c65b9::t_a7b297c0f516e4 5,13
+src/chat/model.ts
+  s_0416b3259c65b9::t_ab0afcbad9de9f 2-9
+  s_0416b3259c65b9::t_a7b297c0f516e4 1,10-13
+vite.config.ts
+  s_0416b3259c65b9::t_ab0afcbad9de9f 2-3,5-9,11-12
+  s_0416b3259c65b9::t_fc7b768e051a90 10
+src/catalog/ControlStories.tsx
+  s_0416b3259c65b9::t_a7b297c0f516e4 1,57-62
+  s_0416b3259c65b9::t_634fa660138d75 63
+.gitignore
+  s_f6d442c1a95ae0::t_dbcf5a022849cb 14-16
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "4d669f5f329341c1e54e3f88ea6fd1bcec6c9974",
+  "prompts": {},
+  "sessions": {
+    "s_0416b3259c65b9": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0aa71-00d3-78d1-863a-34f254ad9e1b",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "Ethan Denny <ethandenny@protonmail.com>"
+    },
+    "s_b4e2175523b5f5": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0af48-56b0-71a1-a0c4-a2f798378a58",
+        "model": "gpt-5.6-luna"
+      },
+      "human_author": "Ethan Denny <ethandenny@protonmail.com>"
+    },
+    "s_f6d442c1a95ae0": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0af51-07d4-7173-a75a-eb3161a50456",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "Ethan Denny <ethandenny@protonmail.com>"
+    }
+  }
+}
