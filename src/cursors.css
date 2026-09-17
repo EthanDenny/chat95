@@ -8,7 +8,7 @@
 html, body, #root, #root * { cursor: var(--win95-arrow); }
 #root input:not([type='checkbox']):not([type='radio']):not([type='range']),
 #root textarea, #root [contenteditable='true'] { cursor: var(--win95-ibeam); }
-#root .splitter-hit { cursor: var(--win95-sizewe); }
+#root .splitter-hit, #root .w95-splitter { cursor: var(--win95-sizewe); }
 #root :disabled, #root :disabled *, #root [aria-disabled='true'], #root [aria-disabled='true'] * { cursor: var(--win95-no); }
 
 :root {
@@ -20,3 +20,10 @@ html, body, #root, #root * { cursor: var(--win95-arrow); }
 #root .resize-e, #root .resize-w { cursor: var(--win95-sizewe); }
 #root .resize-nw, #root .resize-se { cursor: var(--win95-sizenwse); }
 #root .resize-ne, #root .resize-sw { cursor: var(--win95-sizenesw); }
+
+/* Keep the resize cursor when a captured pointer leaves its original handle. */
+html[data-win95-resizing='sizewe'] { --win95-drag-cursor: var(--win95-sizewe); }
+html[data-win95-resizing='sizens'] { --win95-drag-cursor: var(--win95-sizens); }
+html[data-win95-resizing='sizenwse'] { --win95-drag-cursor: var(--win95-sizenwse); }
+html[data-win95-resizing='sizenesw'] { --win95-drag-cursor: var(--win95-sizenesw); }
+html[data-win95-resizing], html[data-win95-resizing] * { cursor: var(--win95-drag-cursor) !important; }

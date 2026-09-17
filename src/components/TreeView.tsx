@@ -93,7 +93,7 @@ export function TreeView({ label, nodes, expanded, onExpandedChange, selected, o
         {row.node.children?.length ? <span className="w95-tree-expander" aria-hidden="true" data-expanded={expanded.includes(row.node.id)} style={{ left: row.depth * 19 + 3 }}
           onClick={event => { event.stopPropagation(); if (!disabled) toggle(row) }} onDoubleClick={event => event.stopPropagation()} /> : null}
         <img src={`/icons/${kitIconNames.indexOf(row.node.icon as typeof kitIconNames[number])}-16.png`} width={16} height={16} alt="" draggable={false} className="w95-list-icon" />
-        <span className="w95-list-label">{row.node.label}</span>
+        <span className="w95-list-label" title={row.node.label}>{row.node.label}</span>
       </div>)}
     </div>
     <div style={{ position: 'absolute', left: width - 18, top: 2 }}><Scrollbar orientation="vertical" length={page} total={total} page={page} value={Math.min(offset, maximum)} onChange={scroll} scale={1} controls={id} disabled={disabled} /></div>

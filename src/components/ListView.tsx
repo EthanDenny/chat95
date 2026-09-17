@@ -101,7 +101,7 @@ export function ListView({ label, items, selected, onSelect, onActivate, width =
           onPointerDown={event => { if (event.button === 0) { event.preventDefault(); if (!disabled) viewport.current?.focus({ preventScroll: true }) } }}
           onClick={() => { if (!disabled) select(index) }} onDoubleClick={() => { if (!disabled) onActivate?.(index) }}>
           {item.icon && <img className="w95-list-icon" src={`/icons/${kitIconNames.indexOf(item.icon as typeof kitIconNames[number])}-16.png`} width={16} height={16} alt="" draggable={false} />}
-          <span className="w95-list-label">{item.label}</span>
+          <span className="w95-list-label" title={item.label}>{item.label}</span>
           {layout === 'details' && <span className="w95-list-detail">{item.detail}</span>}
         </div>)}
       </div>

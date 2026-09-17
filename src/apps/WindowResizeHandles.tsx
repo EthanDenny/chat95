@@ -4,6 +4,8 @@ import type { AppWindow } from './model'
 import type { Rect } from '../theme'
 import { canResize, resizeEdges, resizeLabels, resizeWindow } from './windowSizing'
 import type { ResizeEdge } from './windowSizing'
+import { useResizeCursor } from '../useResizeCursor'
+import { edgeCursors } from '../resizeCursor'
 
 type Props = {
   window: AppWindow
@@ -14,7 +16,8 @@ type Props = {
 
 export function WindowResizeHandles({ window: w, point, onResize, onPreview }: Props) {
   const drag = useRef<{ pointer: number; x: number; y: number; window: AppWindow; edge: ResizeEdge; bounds: Rect } | null>(null)
-  const cancel = () => { drag.current = null; onPreview(null) }
+  const cursor = useResizeCursor()
+  const cancel = () => { cursor.stop(); drag.current = null; onPreview(null) }
   useEffect(() => {
     const cancelOnBlur = () => { if (drag.current) cancel() }
     window.addEventListener('blur', cancelOnBlur)
@@ -33,6 +36,7 @@ export function WindowResizeHandles({ window: w, point, onResize, onPreview }: P
     drag.current = { pointer: event.pointerId, ...p, window: w, edge, bounds: w }
     onPreview(w)
     event.currentTarget.setPointerCapture(event.pointerId)
+    cursor.start(edgeCursors[edge])
   }} onPointerMove={event => {
     const d = drag.current
     if (!d || d.pointer !== event.pointerId) return

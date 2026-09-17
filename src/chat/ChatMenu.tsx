@@ -3,7 +3,7 @@ import { MenuBar } from '../components/MenuBar'
 import { Menu, MenuItem, MenuSeparator } from '../components/Menu'
 
 export type ChatMenuItem = { label: string; action: () => void; disabled?: boolean; checked?: boolean } | 'separator'
-export type ChatMenuGroup = { label: string; items: ChatMenuItem[] }
+export type ChatMenuGroup = { label: string; mnemonic?: string; items: ChatMenuItem[] }
 
 export function ChatMenu({ groups }: { groups: ChatMenuGroup[] }) {
   const [selected, setSelected] = useState<string | null>(null)
@@ -29,7 +29,7 @@ export function ChatMenu({ groups }: { groups: ChatMenuGroup[] }) {
     const outside = (event: PointerEvent) => { if (!root.current?.contains(event.target as Node)) setSelected(null) }
     const keys = (event: KeyboardEvent) => {
       if (root.current?.closest('[inert]')) return
-      const match = event.altKey && !event.ctrlKey && !event.metaKey && groups.find(item => item.label[0].toLowerCase() === event.key.toLowerCase())
+      const match = event.altKey && !event.ctrlKey && !event.metaKey && groups.find(item => (item.mnemonic ?? item.label[0]).toLowerCase() === event.key.toLowerCase())
       if (match) { event.preventDefault(); open(match.label, true) }
       if (event.key === 'F10' && !event.shiftKey) { event.preventDefault(); setSelected(null); trigger(groups[0].label)?.focus() }
     }
@@ -40,7 +40,7 @@ export function ChatMenu({ groups }: { groups: ChatMenuGroup[] }) {
   return <div ref={root} className="chat-menu" onBlur={event => {
     if (event.relatedTarget && !event.currentTarget.contains(event.relatedTarget as Node)) setSelected(null)
   }}>
-    <MenuBar aria-label="Chat menu" items={groups.map(({ label }) => ({ label, style: { padding: '2px 6px', height: 18 } }))}
+    <MenuBar aria-label="Chat menu" items={groups.map(({ label, mnemonic }) => ({ label, mnemonic, style: { padding: '2px 6px', height: 18 } }))}
       selected={selected} onOpen={(label, fromKeyboard) => selected === label ? dismiss() : open(label, fromKeyboard)} onDismiss={dismiss} />
     {group && <Menu ref={popup} aria-label={group.label} style={{ position: 'absolute', top: 18, left, width: 186 }}
       onDismiss={dismiss} onNavigate={direction => open(groups[(groups.indexOf(group) + direction + groups.length) % groups.length].label, true)}>
