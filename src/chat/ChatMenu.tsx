@@ -36,7 +36,7 @@ export function ChatMenu({ groups }: { groups: ChatMenuGroup[] }) {
     document.addEventListener('keydown', keys)
     return () => { document.removeEventListener('pointerdown', outside); document.removeEventListener('keydown', keys) }
   }, [groups])
-  return <div ref={root} role="group" className="chat-menu" onBlur={event => {
+  return <div ref={root} className="chat-menu" onBlur={event => {
     if (event.relatedTarget && !event.currentTarget.contains(event.relatedTarget as Node)) setSelected(null)
   }}>
     <MenuBar aria-label="Chat menu" items={groups.map(({ label, mnemonic }) => ({ label, mnemonic, style: { padding: '2px 6px', height: 18 } }))}
