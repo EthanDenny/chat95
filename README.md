@@ -54,7 +54,7 @@ Restart the development server after changing environment variables. The private
 | `npm run build` | Type-check and create a production build |
 | `npm run preview` | Preview an existing production build locally |
 | `npm test` | Run the automated tests |
-| `npm run lint` | Run Oxlint |
+| `npm run lint` | Run Biome across the repository |
 | `npm run cf:types` | Regenerate Cloudflare binding types |
 | `npm run cf:dev` | Build and run the app with Wrangler locally |
 | `npm run deploy` | Build and deploy to Cloudflare |

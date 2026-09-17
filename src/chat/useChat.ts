@@ -25,12 +25,11 @@ export function useChat() {
   const chat = conversations.find(item => item.id === selected)!
   useEffect(() => {
     // Report the result of syncing with external storage; writes cannot run during render.
-    // oxlint-disable-next-line react/set-state-in-effect
     setHistorySaved(saveChatHistory(history))
   }, [history])
   useEffect(() => {
     const active = requests.current
-    return () => { active.forEach(controller => controller.abort()); active.clear() }
+    return () => { active.forEach(controller => { controller.abort() }); active.clear() }
   }, [])
 
   function update(id: string, patch: Partial<Conversation>) {

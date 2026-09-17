@@ -97,9 +97,7 @@ export default function ChatPage() {
   useEffect(() => { document.title = `${chat.title} - Chat95` }, [chat.title])
   useEffect(() => {
     // Follow moves of the open document (including tool actions), not ordinary folder browsing.
-    // oxlint-disable-next-line react/set-state-in-effect
     setLocation(chat.folderId)
-    // oxlint-disable-next-line react/set-state-in-effect
     setSelection({ kind: 'chat', id: chat.id })
   }, [chat.id, chat.folderId])
   const conversation = <section className="chat-main" aria-label="Chat" style={{ width: chatWidth, height: workspaceHeight }}>
@@ -119,7 +117,7 @@ export default function ChatPage() {
     <WindowFrame className="chat-shell w95-native-text" style={{ width: display.width, height: display.height, transform: `scale(${CHAT_SCALE})`, transformOrigin: 'top left' }}>
       <div inert={modalOpen}>
         <TitleBar title={`${chat.title} - Chat95`} icon={iconUrl('My Computer')} className="chat-titlebar" />
-        <div className="chat-window-controls" aria-label="Chat95 window controls">
+        <div className="chat-window-controls" role="group" aria-label="Chat95 window controls">
           <CaptionButton kind="minimize" aria-label="Minimize browser window (unavailable)" title="Webpages cannot minimize the browser window. Use the browser’s minimize control." data-window-control="minimize" disabled />
           <CaptionButton kind={browserWindow.fullscreen ? 'restore' : 'maximize'} aria-label={browserWindow.fullscreen ? 'Exit fullscreen' : 'Enter fullscreen'}
             title={browserWindow.fullscreenEnabled ? browserWindow.fullscreen ? 'Exit fullscreen' : 'Enter browser fullscreen' : 'This browser does not support webpage fullscreen.'}

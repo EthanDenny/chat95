@@ -9,7 +9,7 @@
     "cf:types": "wrangler types",
     "cf:dev": "npm run build && wrangler dev",
     "deploy": "npm run build && wrangler deploy",
-    "lint": "oxlint",
+    "lint": "biome lint .",
     "preview": "vite preview",
     "test": "tsx --tsconfig tsconfig.app.json --test scripts/test-*.ts"
   },
@@ -21,12 +21,12 @@
     "react-markdown": "^10.1.0"
   },
   "devDependencies": {
+    "@biomejs/biome": "^2.5.14",
     "@types/hast": "^3.0.5",
     "@types/node": "^24.13.3",
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.7",
     "@vitejs/plugin-react": "^6.1.1",
-    "oxlint": "^1.81.0",
     "tsx": "^4.23.13",
     "typescript": "~6.0.2",
     "vite": "^8.3.0",
