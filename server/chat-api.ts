@@ -118,6 +118,7 @@ export async function handleChat(request: Request, config: ChatConfig): Promise<
         401: 'OpenRouter rejected the API key. Please contact the site owner.',
         402: 'The OpenRouter account needs more credits.',
         403: 'OpenRouter denied access. Please contact the site owner.',
+        404: 'The configured OpenRouter model is unavailable. Please contact the site owner.',
         429: 'OpenRouter is busy or rate limited. Please retry shortly.',
       }
       let error = errors[response.status] ?? 'OpenRouter could not complete the response. Please retry.'

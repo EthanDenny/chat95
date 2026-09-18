@@ -23,7 +23,7 @@
     ]
   },
   "vars": {
-    "OPENROUTER_MODEL": "stealth/union-alpha"
+    "OPENROUTER_MODEL": "openrouter/free"
   },
   "secrets": {
     "required": [

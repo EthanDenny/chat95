@@ -61,11 +61,13 @@ test('chat rejects cross-origin requests, invalid roles and excessive input with
 })
 
 test('chat sanitizes provider errors and handles empty completions', async () => {
-  for (const status of [401, 402, 429, 500]) {
+  for (const status of [401, 402, 404, 429, 500]) {
     await withServer(async () => new Response('test-secret upstream details', { status }), async url => {
       const response = await post(url, { messages: [{ role: 'user', content: 'Hello' }] })
       assert.equal(response.status, status === 429 ? 429 : 502)
-      assert(!JSON.stringify(await response.json()).includes('test-secret'))
+      const body = await response.json() as { error: string }
+      assert(!JSON.stringify(body).includes('test-secret'))
+      if (status === 404) assert.match(body.error, /model is unavailable/)
     })
   }
   await withServer(async () => Response.json({ choices: [] }), async url => {

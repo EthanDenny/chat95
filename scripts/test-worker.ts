@@ -11,7 +11,7 @@ function request(body = '{}', headers: Record<string, string> = {}) {
 }
 function environment(visitor = true, site = true) {
   return {
-    OPENROUTER_API_KEY: 'test-secret', OPENROUTER_MODEL: 'stealth/union-alpha',
+    OPENROUTER_API_KEY: 'test-secret', OPENROUTER_MODEL: 'openrouter/free',
     CHAT_RATE_LIMIT: { limit: async () => ({ success: visitor }) },
     SITE_RATE_LIMIT: { limit: async () => ({ success: site }) },
   } as Env

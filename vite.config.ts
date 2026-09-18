@@ -7,7 +7,7 @@ export default defineConfig(({ mode }) => {
   return {
     plugins: [react(), openRouterPlugin({
       apiKey: env.OPENROUTER_API_KEY ?? '',
-      model: env.OPENROUTER_MODEL || 'stealth/union-alpha',
+      model: env.OPENROUTER_MODEL || 'openrouter/free',
     })],
   }
 })

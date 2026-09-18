@@ -31,7 +31,7 @@ Chat95 is a Windows 95-inspired chat app powered by OpenRouter and deployed with
 
    ```dotenv
    OPENROUTER_API_KEY=<your-openrouter-key>
-   OPENROUTER_MODEL=stealth/union-alpha
+   OPENROUTER_MODEL=openrouter/free
    ```
 
    The API key is read only by the local server and must not use a `VITE_` prefix. Never commit `.env.local`.
