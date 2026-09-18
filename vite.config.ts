@@ -7,7 +7,7 @@ export default defineConfig(({ mode }) => {
   return {
     plugins: [react(), openRouterPlugin({
       apiKey: env.OPENROUTER_API_KEY ?? '',
-      model: env.OPENROUTER_MODEL || 'openrouter/free',
+      model: env.OPENROUTER_MODEL || 'nvidia/nemotron-3-super-120b-a12b:free',
     })],
   }
 })
