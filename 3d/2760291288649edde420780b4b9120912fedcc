@@ -1,0 +1,29 @@
+wrangler.jsonc
+  s_f6d442c1a95ae0::t_0a169940dabd17 26
+README.md
+  s_f6d442c1a95ae0::t_0a169940dabd17 34
+scripts/test-worker.ts
+  s_f6d442c1a95ae0::t_0a169940dabd17 14
+worker-configuration.d.ts
+  s_f6d442c1a95ae0::t_c56d3098de32e3 2,7
+.env.example
+  s_f6d442c1a95ae0::t_0a169940dabd17 3
+vite.config.ts
+  s_f6d442c1a95ae0::t_0a169940dabd17 10
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "3d2760291288649edde420780b4b9120912fedcc",
+  "prompts": {},
+  "sessions": {
+    "s_f6d442c1a95ae0": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0af51-07d4-7173-a75a-eb3161a50456",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Ethan Denny <ethandenny@protonmail.com>"
+    }
+  }
+}
