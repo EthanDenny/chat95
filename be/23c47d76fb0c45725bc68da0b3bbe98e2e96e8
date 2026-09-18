@@ -1,0 +1,33 @@
+scripts/test-chat.ts
+  s_f6d442c1a95ae0::t_c29ee5234dd6f6 64,68-70
+server/chat-api.ts
+  s_f6d442c1a95ae0::t_0dc226baceee4a 121
+scripts/test-worker.ts
+  s_f6d442c1a95ae0::t_0dc226baceee4a 14
+README.md
+  s_f6d442c1a95ae0::t_0dc226baceee4a 34
+wrangler.jsonc
+  s_f6d442c1a95ae0::t_0dc226baceee4a 26
+vite.config.ts
+  s_f6d442c1a95ae0::t_0dc226baceee4a 10
+.env.example
+  s_f6d442c1a95ae0::t_0dc226baceee4a 3
+worker-configuration.d.ts
+  s_f6d442c1a95ae0::t_1ef5566381456b 2,7
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "be23c47d76fb0c45725bc68da0b3bbe98e2e96e8",
+  "prompts": {},
+  "sessions": {
+    "s_f6d442c1a95ae0": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0af51-07d4-7173-a75a-eb3161a50456",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Ethan Denny <ethandenny@protonmail.com>"
+    }
+  }
+}
